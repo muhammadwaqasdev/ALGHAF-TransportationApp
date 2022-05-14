@@ -1,8 +1,9 @@
-import 'package:flutter_starter_app/src/models/user.dart';
+import 'package:al_ghaf/src/models/user.dart';
 import 'package:stacked/stacked.dart';
 
 class AuthService with ReactiveServiceMixin {
   ReactiveValue<User?> _user = ReactiveValue<User?>(null);
+
   User? get user => _user.value;
 
   AuthService() {
