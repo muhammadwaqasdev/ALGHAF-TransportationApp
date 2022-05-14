@@ -1,3 +1,3 @@
-abstract class Setter{
+abstract class Setter {
   apply();
 }

@@ -11,9 +11,9 @@
       "type": "dart",
       "flutterMode": "profile",
       "args": [
-          "--flavor",
-          "dev"
-        ]
+        "--flavor",
+        "dev"
+      ]
     },
     {
       "name": "Flutter_Debug Dev",
@@ -22,9 +22,9 @@
       "type": "dart",
       "flutterMode": "debug",
       "args": [
-          "--flavor",
-          "dev"
-        ]
+        "--flavor",
+        "dev"
+      ]
     },
     {
       "name": "Flutter_Release Dev",
@@ -33,9 +33,9 @@
       "type": "dart",
       "flutterMode": "release",
       "args": [
-          "--flavor",
-          "dev"
-        ]
+        "--flavor",
+        "dev"
+      ]
     },
     {
       "name": "Flutter_Release Prod",
@@ -44,9 +44,9 @@
       "type": "dart",
       "flutterMode": "release",
       "args": [
-          "--flavor",
-          "prod"
-        ]
+        "--flavor",
+        "prod"
+      ]
     }
   ]
 }

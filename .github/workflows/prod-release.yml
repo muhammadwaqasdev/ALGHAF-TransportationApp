@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      
+
       - name: Read pubspec.yaml Version
         uses: KJ002/read-yaml@1.5
         id: pubspec-data
@@ -47,13 +47,13 @@ jobs:
         with:
           flutter-version: "2.6.0-11.0.pre"
           channel: 'dev'
-          
+
       - name: Decode android/key.properties
         run: echo "${{ secrets.KEY_PROPERTIES_BASE64 }}" | base64 --decode > android/key.properties
 
       - name: Decode android/neumodore_key.jks
         run: echo "${{ secrets.KEYSTORE_JKS_BASE64 }}" | base64 --decode > android/key.jks
-      
+
       - name: Pub Get Packages
         run: flutter pub get
 
@@ -109,7 +109,7 @@ jobs:
 
   release_internal:
     name: Release Artifacts to internal track
-    needs: [build]
+    needs: [ build ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1

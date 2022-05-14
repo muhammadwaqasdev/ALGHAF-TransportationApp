@@ -1,5 +1,5 @@
+import 'package:al_ghaf/src/services/remote/api_client.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter_starter_app/src/services/remote/api_client.dart';
 
 class ApiService {
   ApiClient? _apiClient;
