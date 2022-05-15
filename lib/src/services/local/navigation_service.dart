@@ -30,6 +30,15 @@ class NavService {
   static Future<dynamic>? register({dynamic arguments}) => _navigationService!
       .clearStackAndShow(Routes.registerView, arguments: arguments);
 
+  static Future<dynamic>? forgotPassword({dynamic arguments}) => _navigationService!
+      .navigateTo(Routes.forgotPasswordView, arguments: arguments);
+
+  static Future<dynamic>? numberVerify({dynamic arguments}) => _navigationService!
+      .navigateTo(Routes.numberVerifyView, arguments: arguments);
+
+  static Future<dynamic>? codeVerify({dynamic arguments}) => _navigationService!
+      .navigateTo(Routes.codeVerifyView, arguments: arguments);
+
   static Future<dynamic>? home({dynamic arguments}) => _navigationService!
       .clearStackAndShow(Routes.homeView, arguments: arguments);
 }
