@@ -24,6 +24,12 @@ class NavService {
   static Future<dynamic>? splash({dynamic arguments}) => _navigationService!
       .clearStackAndShow(Routes.splashView, arguments: arguments);
 
+  static Future<dynamic>? signIn({dynamic arguments}) => _navigationService!
+      .clearStackAndShow(Routes.signInView, arguments: arguments);
+
+  static Future<dynamic>? register({dynamic arguments}) => _navigationService!
+      .clearStackAndShow(Routes.registerView, arguments: arguments);
+
   static Future<dynamic>? home({dynamic arguments}) => _navigationService!
       .clearStackAndShow(Routes.homeView, arguments: arguments);
 }
