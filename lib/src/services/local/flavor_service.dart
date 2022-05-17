@@ -1,8 +1,9 @@
 import 'package:package_info/package_info.dart';
 
 enum Env {
-  prod,
-  dev,
+  user_prod,
+  rider_prod,
+  admin_prod,
 }
 
 class FlavorService {
@@ -12,16 +13,27 @@ class FlavorService {
 
   static init(PackageInfo info) {
     final flavor = info.packageName.split(".").last;
-    if (flavor == 'dev') {
-      env = Env.dev;
-    } else {
-      env = Env.prod;
+    switch(flavor) {
+      case 'user': {
+        env = Env.user_prod;
+      }
+      break;
+
+      case 'rider': {
+        env = Env.rider_prod;
+      }
+      break;
+
+      case 'admin': {
+        env = Env.admin_prod;
+      }
+      break;
     }
   }
 
   static String get getBaseApi {
     // return prod url
-    if (env == Env.prod) {
+    if (env == Env.user_prod) {
       return "";
     }
     // return url other than prod one

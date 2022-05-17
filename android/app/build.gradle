@@ -55,15 +55,20 @@ android {
 
     flavorDimensions "flavors"
     productFlavors {
-        dev {
-            dimension "flavors"
-            resValue "string", "app_name", "al_ghaf Dev"
-            applicationIdSuffix ".dev"
-            versionNameSuffix "-dev"
-        }
-        prod {
+        user_prod {
             dimension "flavors"
             resValue "string", "app_name", "al_ghaf"
+            applicationIdSuffix ".user"
+        }
+        rider_prod {
+            dimension "flavors"
+            resValue "string", "app_name", "al_ghaf"
+            applicationIdSuffix ".rider"
+        }
+        admin_prod {
+            dimension "flavors"
+            resValue "string", "app_name", "al_ghaf"
+            applicationIdSuffix ".admin"
         }
     }
 }

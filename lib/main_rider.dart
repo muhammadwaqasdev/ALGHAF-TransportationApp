@@ -1,4 +1,5 @@
-import 'package:al_ghaf/src/app/app_view.dart';
+import 'package:al_ghaf/src/app/rider_app_view.dart';
+import 'package:al_ghaf/src/app/user_app_view.dart';
 import 'package:al_ghaf/src/configs/app_setup.locator.dart';
 import 'package:al_ghaf/src/services/local/flavor_service.dart';
 import 'package:flutter/cupertino.dart';
@@ -16,5 +17,5 @@ void main() async {
   // app flavor init
   FlavorService.init(package);
 
-  runApp(AppView());
+  runApp(RiderAppView());
 }

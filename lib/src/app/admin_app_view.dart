@@ -3,7 +3,7 @@ import 'package:al_ghaf/src/services/local/navigation_service.dart';
 import 'package:al_ghaf/src/views/user/splash/splash_view.dart';
 import 'package:flutter/material.dart';
 
-class AppView extends StatelessWidget {
+class AdminAppView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
