@@ -34,8 +34,7 @@ class _CustomInputState extends State<CustomInput> {
   Widget build(BuildContext context) {
     return Container(
       width: widget.width ?? context.screenSize().width,
-      height: 52,
-      padding: EdgeInsets.fromLTRB(20, 17, 21, 19),
+      padding: EdgeInsets.fromLTRB(20, 0, 21, 0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(100),
         color: AppColors.white,
@@ -59,7 +58,7 @@ class _CustomInputState extends State<CustomInput> {
           border: InputBorder.none,
           hintText: widget.hint,
           hintStyle: TextStyling.text.copyWith(color: AppColors.grey),
-          contentPadding: EdgeInsets.fromLTRB(0, 0, 57, 12),
+          contentPadding: EdgeInsets.fromLTRB(0, 15, 57, 12),
           suffixIcon: (widget.isPassword == true)
               ? InkWell(
             onTap: () {

@@ -69,7 +69,6 @@ class ForgotPasswordView extends StatelessWidget {
                     MainButton(
                       title: "Send",
                       isPrimary: true,
-                      visibility: model.validator(context1),
                       onTap: () {
                         (model.validator(context1) == true)
                             ? NavService.signIn()

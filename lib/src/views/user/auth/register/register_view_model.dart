@@ -9,11 +9,14 @@ class RegisterViewModel extends BaseViewModel {
   TextEditingController rePassword = TextEditingController();
   TextEditingController password = TextEditingController();
 
+
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
   bool validator(context) {
-    if (m.Form.of(context)?.validate() ?? false) {
-      return false;
-    } else {
+    if (formKey.currentState?.validate() ?? false) {
       return true;
+    } else {
+      return false;
     }
   }
 }
