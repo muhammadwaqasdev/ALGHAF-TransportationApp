@@ -4,14 +4,17 @@ class Assets {
   static String get imagesBackArrowBig => "assets/images/backArrowBig.png";
   static String get imagesBackgroungImage => "assets/images/backgroungImage.png";
   static String get imagesCarLogo => "assets/images/carLogo.png";
+  static String get imagesDubaiImage => "assets/images/dubaiImage.png";
   static String get imagesEyeUnSelected => "assets/images/eyeUnSelected.png";
   static String get imagesFacebook => "assets/images/Facebook.png";
   static String get imagesGitHub => "assets/images/GitHub.png";
+  static String get imagesGlobe => "assets/images/Globe.png";
   static String get imagesGoogle => "assets/images/google.png";
   static String get imagesHotelLogo => "assets/images/hotelLogo.png";
   static String get imagesLeftArrowWhite => "assets/images/leftArrowWhite.png";
   static String get imagesLinkedIn => "assets/images/linkedIn.png";
   static String get imagesMainLogo => "assets/images/mainLogo.png";
+  static String get imagesMenuIcon => "assets/images/menuIcon.png";
   static String get imagesMenuStacked => "assets/images/menuStacked.png";
   static String get imagesParselLogo => "assets/images/parselLogo.png";
   static String get imagesPhoneIcon => "assets/images/phoneIcon.png";
