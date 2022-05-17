@@ -1,5 +1,6 @@
 import 'package:al_ghaf/src/base/utils/constants.dart';
 import 'package:al_ghaf/src/services/local/navigation_service.dart';
+import 'package:al_ghaf/src/views/user/home/home_view.dart';
 import 'package:al_ghaf/src/views/user/splash/splash_view.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class UserAppView extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
           appBarTheme: AppBarTheme(),
           fontFamily: 'Poppins'),
-      home: SplashView(),
+      home: HomeView(),
       builder: (context, child) {
         return Navigator(
           onGenerateRoute: (setting) => MaterialPageRoute(
