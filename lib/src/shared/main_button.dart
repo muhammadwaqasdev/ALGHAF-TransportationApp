@@ -6,9 +6,8 @@ import 'package:flutter/material.dart';
 class MainButton extends StatelessWidget {
   final String title;
   final bool isPrimary;
-  final bool visibility;
   final Function onTap;
-  const MainButton({Key? key,required this.title,required this.isPrimary,required this.visibility,required this.onTap}) : super(key: key);
+  const MainButton({Key? key,required this.title,required this.isPrimary,required this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +20,7 @@ class MainButton extends StatelessWidget {
         height: 60,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(100),
-          color: (visibility == false)? AppColors.grey : isPrimary ? AppColors.primary : AppColors.secondary,
+          color: isPrimary ? AppColors.primary : AppColors.secondary,
         ),
         padding: EdgeInsets.symmetric(horizontal: 0, vertical: 18, ),
         child: Row(
