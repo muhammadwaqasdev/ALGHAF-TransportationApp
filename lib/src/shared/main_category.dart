@@ -1,6 +1,7 @@
-import 'package:al_ghaf/generated/assets.asset.dart';
-import 'package:al_ghaf/src/styles/app_colors.dart';
-import 'package:al_ghaf/src/styles/text_theme.dart';
+import 'package:AlGhaf/generated/assets.asset.dart';
+import 'package:AlGhaf/src/shared/spacing.dart';
+import 'package:AlGhaf/src/styles/app_colors.dart';
+import 'package:AlGhaf/src/styles/text_theme.dart';
 import 'package:flutter/material.dart';
 
 class MainCategory extends StatelessWidget {
@@ -33,6 +34,7 @@ class MainCategory extends StatelessWidget {
             ),
             child: Center(child: Image.asset(logo,height: 36,width: 36,)),
           ),
+          VerticalSpacing(),
           Text(title,style: TextStyling.h4.copyWith(color: AppColors.white),)
         ],
       ),

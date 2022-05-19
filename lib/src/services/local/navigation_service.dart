@@ -1,5 +1,5 @@
-import 'package:al_ghaf/src/configs/app_setup.locator.dart';
-import 'package:al_ghaf/src/configs/app_setup.router.dart';
+import 'package:AlGhaf/src/configs/app_setup.locator.dart';
+import 'package:AlGhaf/src/configs/app_setup.router.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked_services/stacked_services.dart';

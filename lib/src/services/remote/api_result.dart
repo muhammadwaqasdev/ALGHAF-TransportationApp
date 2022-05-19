@@ -1,4 +1,4 @@
-import 'package:al_ghaf/src/services/remote/network_exceptions.dart';
+import 'package:AlGhaf/src/services/remote/network_exceptions.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'api_result.freezed.dart';

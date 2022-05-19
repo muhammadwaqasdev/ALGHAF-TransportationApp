@@ -1,10 +1,10 @@
-import 'package:al_ghaf/generated/assets.asset.dart';
-import 'package:al_ghaf/src/services/local/navigation_service.dart';
-import 'package:al_ghaf/src/shared/app_screen.dart';
-import 'package:al_ghaf/src/shared/numaric_pad.dart';
-import 'package:al_ghaf/src/styles/app_colors.dart';
-import 'package:al_ghaf/src/styles/text_theme.dart';
-import 'package:al_ghaf/src/views/user/auth/code_verify/code_verify_view_model.dart';
+import 'package:AlGhaf/generated/assets.asset.dart';
+import 'package:AlGhaf/src/services/local/navigation_service.dart';
+import 'package:AlGhaf/src/shared/app_screen.dart';
+import 'package:AlGhaf/src/shared/numaric_pad.dart';
+import 'package:AlGhaf/src/styles/app_colors.dart';
+import 'package:AlGhaf/src/styles/text_theme.dart';
+import 'package:AlGhaf/src/views/user/auth/code_verify/code_verify_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 import 'package:stacked/stacked.dart';

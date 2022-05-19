@@ -38,7 +38,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.parallelsouls.al_ghaf"
+        applicationId "com.parallelsouls.AlGhaf"
         minSdkVersion 21
         targetSdkVersion 31
         versionCode flutterVersionCode.toInteger()
@@ -57,17 +57,17 @@ android {
     productFlavors {
         user_prod {
             dimension "flavors"
-            resValue "string", "app_name", "al_ghaf"
+            resValue "string", "app_name", "AlGhaf"
             applicationIdSuffix ".user"
         }
         rider_prod {
             dimension "flavors"
-            resValue "string", "app_name", "al_ghaf"
+            resValue "string", "app_name", "AlGhaf"
             applicationIdSuffix ".rider"
         }
         admin_prod {
             dimension "flavors"
-            resValue "string", "app_name", "al_ghaf"
+            resValue "string", "app_name", "AlGhaf"
             applicationIdSuffix ".admin"
         }
     }

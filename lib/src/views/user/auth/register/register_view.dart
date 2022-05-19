@@ -1,12 +1,12 @@
-import 'package:al_ghaf/src/base/utils/utils.dart';
-import 'package:al_ghaf/src/services/local/navigation_service.dart';
-import 'package:al_ghaf/src/shared/app_screen.dart';
-import 'package:al_ghaf/src/shared/main_button.dart';
-import 'package:al_ghaf/src/shared/spacing.dart';
-import 'package:al_ghaf/src/shared/textfield.dart';
-import 'package:al_ghaf/src/styles/app_colors.dart';
-import 'package:al_ghaf/src/styles/text_theme.dart';
-import 'package:al_ghaf/src/views/user/auth/register/register_view_model.dart';
+import 'package:AlGhaf/src/base/utils/utils.dart';
+import 'package:AlGhaf/src/services/local/navigation_service.dart';
+import 'package:AlGhaf/src/shared/app_screen.dart';
+import 'package:AlGhaf/src/shared/main_button.dart';
+import 'package:AlGhaf/src/shared/spacing.dart';
+import 'package:AlGhaf/src/shared/textfield.dart';
+import 'package:AlGhaf/src/styles/app_colors.dart';
+import 'package:AlGhaf/src/styles/text_theme.dart';
+import 'package:AlGhaf/src/views/user/auth/register/register_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 

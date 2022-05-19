@@ -1,4 +1,4 @@
-import 'package:al_ghaf/src/models/user.dart';
+import 'package:AlGhaf/src/models/user.dart';
 import 'package:stacked/stacked.dart';
 
 class AuthService with ReactiveServiceMixin {

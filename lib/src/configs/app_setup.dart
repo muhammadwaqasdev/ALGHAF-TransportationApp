@@ -1,14 +1,15 @@
-import 'package:al_ghaf/src/services/local/auth_service.dart';
-import 'package:al_ghaf/src/services/local/connectivity_service.dart';
-import 'package:al_ghaf/src/services/local/keyboard_service.dart';
-import 'package:al_ghaf/src/services/remote/api_service.dart';
-import 'package:al_ghaf/src/views/user/auth/code_verify/code_verify_view.dart';
-import 'package:al_ghaf/src/views/user/auth/forgot_password/forgot_password_view.dart';
-import 'package:al_ghaf/src/views/user/auth/number_verify/number_verify_view.dart';
-import 'package:al_ghaf/src/views/user/auth/register/register_view.dart';
-import 'package:al_ghaf/src/views/user/auth/signin/signin_view.dart';
-import 'package:al_ghaf/src/views/user/home/home_view.dart';
-import 'package:al_ghaf/src/views/user/splash/splash_view.dart';
+import 'package:AlGhaf/src/services/local/auth_service.dart';
+import 'package:AlGhaf/src/services/local/connectivity_service.dart';
+import 'package:AlGhaf/src/services/local/keyboard_service.dart';
+import 'package:AlGhaf/src/services/local/main_drawer_service.dart';
+import 'package:AlGhaf/src/services/remote/api_service.dart';
+import 'package:AlGhaf/src/views/user/auth/code_verify/code_verify_view.dart';
+import 'package:AlGhaf/src/views/user/auth/forgot_password/forgot_password_view.dart';
+import 'package:AlGhaf/src/views/user/auth/number_verify/number_verify_view.dart';
+import 'package:AlGhaf/src/views/user/auth/register/register_view.dart';
+import 'package:AlGhaf/src/views/user/auth/signin/signin_view.dart';
+import 'package:AlGhaf/src/views/user/home/home_view.dart';
+import 'package:AlGhaf/src/views/user/splash/splash_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
 
@@ -31,6 +32,7 @@ import 'package:stacked_services/stacked_services.dart';
     LazySingleton(classType: ConnectivityService),
     LazySingleton(classType: KeyboardService),
     LazySingleton(classType: ApiService),
+    LazySingleton(classType: MainDrawerService),
   ],
 )
 class AppSetup {

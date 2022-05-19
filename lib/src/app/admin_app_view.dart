@@ -1,6 +1,6 @@
-import 'package:al_ghaf/src/base/utils/constants.dart';
-import 'package:al_ghaf/src/services/local/navigation_service.dart';
-import 'package:al_ghaf/src/views/user/splash/splash_view.dart';
+import 'package:AlGhaf/src/base/utils/constants.dart';
+import 'package:AlGhaf/src/services/local/navigation_service.dart';
+import 'package:AlGhaf/src/views/user/splash/splash_view.dart';
 import 'package:flutter/material.dart';
 
 class AdminAppView extends StatelessWidget {
