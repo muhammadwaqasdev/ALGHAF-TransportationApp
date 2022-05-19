@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:al_ghaf/src/models/wrappers/response_wrapper.dart';
-import 'package:al_ghaf/src/services/local/flavor_service.dart';
+import 'package:AlGhaf/src/models/wrappers/response_wrapper.dart';
+import 'package:AlGhaf/src/services/local/flavor_service.dart';
 import 'package:dio/dio.dart';
 
 const _defaultConnectTimeout = Duration.millisecondsPerMinute;

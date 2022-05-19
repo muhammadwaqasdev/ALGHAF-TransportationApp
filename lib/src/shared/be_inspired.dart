@@ -1,7 +1,7 @@
-import 'package:al_ghaf/generated/assets.asset.dart';
-import 'package:al_ghaf/src/shared/spacing.dart';
-import 'package:al_ghaf/src/styles/app_colors.dart';
-import 'package:al_ghaf/src/styles/text_theme.dart';
+import 'package:AlGhaf/generated/assets.asset.dart';
+import 'package:AlGhaf/src/shared/spacing.dart';
+import 'package:AlGhaf/src/styles/app_colors.dart';
+import 'package:AlGhaf/src/styles/text_theme.dart';
 import 'package:flutter/material.dart';
 
 class BeInspired extends StatelessWidget {
@@ -23,6 +23,7 @@ class BeInspired extends StatelessWidget {
         color: AppColors.white,
       ),
       padding: EdgeInsets.fromLTRB(26, 17, 17, 17),
+      margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

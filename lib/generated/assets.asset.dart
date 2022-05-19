@@ -5,6 +5,7 @@ class Assets {
   static String get imagesBackgroungImage => "assets/images/backgroungImage.png";
   static String get imagesCarLogo => "assets/images/carLogo.png";
   static String get imagesDubaiImage => "assets/images/dubaiImage.png";
+  static String get imagesEndLocation => "assets/images/endLocation.png";
   static String get imagesEyeUnSelected => "assets/images/eyeUnSelected.png";
   static String get imagesFacebook => "assets/images/Facebook.png";
   static String get imagesGitHub => "assets/images/GitHub.png";
@@ -22,4 +23,5 @@ class Assets {
   static String get imagesRemove => "assets/images/remove.png";
   static String get imagesRightArrowBlack => "assets/images/rightArrowBlack.png";
   static String get imagesRightArrowWhite => "assets/images/rightArrowWhite.png";
+  static String get imagesStartlocation => "assets/images/startlocation.png";
 }

@@ -1,6 +1,6 @@
-import 'package:al_ghaf/src/base/utils/utils.dart';
-import 'package:al_ghaf/src/styles/app_colors.dart';
-import 'package:al_ghaf/src/styles/text_theme.dart';
+import 'package:AlGhaf/src/base/utils/utils.dart';
+import 'package:AlGhaf/src/styles/app_colors.dart';
+import 'package:AlGhaf/src/styles/text_theme.dart';
 import 'package:flutter/material.dart';
 
 class CustomInput extends StatefulWidget {

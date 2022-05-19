@@ -1,4 +1,4 @@
-import 'package:al_ghaf/src/services/local/navigation_service.dart';
+import 'package:AlGhaf/src/services/local/navigation_service.dart';
 import 'package:stacked/stacked.dart';
 
 class SplashViewModel extends BaseViewModel {

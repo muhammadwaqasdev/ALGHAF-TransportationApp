@@ -1,4 +1,4 @@
-import 'package:al_ghaf/src/services/remote/api_client.dart';
+import 'package:AlGhaf/src/services/remote/api_client.dart';
 import 'package:dio/dio.dart';
 
 class ApiService {

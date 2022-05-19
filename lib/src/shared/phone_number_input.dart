@@ -1,5 +1,5 @@
-import 'package:al_ghaf/src/styles/app_colors.dart';
-import 'package:al_ghaf/src/styles/text_theme.dart';
+import 'package:AlGhaf/src/styles/app_colors.dart';
+import 'package:AlGhaf/src/styles/text_theme.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 
