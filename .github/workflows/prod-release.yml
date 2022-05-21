@@ -82,14 +82,12 @@ jobs:
           path: build/app/outputs/flutter-apk/app-${{env.APP_FLAVOR}}-release.apk
 
 
-      - name: wa-notify
-          uses: mdb571/wa-action@master
-          with:
-            from: ${{ secrets.FROM_WHATSAPP_NUMBER }}
-            to: ${{secrets.TO_WHATSAPP_NUMBER }}
-          env:
-            TWILIO_ACCOUNT_SID: ${{ secrets.ACCOUNT_SID }}
-            TWILIO_AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
+      - name: whatsapp-notify
+        uses: kaviadigdarshan/whatsapp-actions@main
+        env:
+          ACCOUNT_SID: ${{ secrets.ACCOUNT_SID }}
+          AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
+          TO_WHATSAPP_NUMBER: ${{ secrets.TO_WHATSAPP_NUMBER }}
 
 #      - name: Send mail
 #        uses: dawidd6/action-send-mail@v3
