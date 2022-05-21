@@ -97,15 +97,6 @@ class _UserAppViewState extends State<UserAppView> {
         return Navigator(
           onGenerateRoute: (setting) => MaterialPageRoute(
               builder: (_) => Scaffold(
-                // drawer: DrawerMainView(),
-                //     onDrawerChanged: (val){
-                //         val ?
-                //         open() :
-                //         close();
-                //         setState(() {
-                //
-                //         });
-                //     },
                     body: Stack(
                       children: [
                         child!,

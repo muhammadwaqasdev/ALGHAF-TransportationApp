@@ -16,7 +16,7 @@ name: CD Dev-Lane
 on:
   push:
     branches:
-      - prod
+      - master
 jobs:
   build:
     name: Build Artifacts and Release
@@ -40,19 +40,19 @@ jobs:
       - name: Setup Java
         uses: actions/setup-java@v1
         with:
-          java-version: "8.x"
+          java-version: "11.x"
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v1
         with:
-          flutter-version: "2.6.0-11.0.pre"
-          channel: 'dev'
+          flutter-version: "3.0.0"
+          channel: 'stable'
 
-      - name: Decode android/key.properties
-        run: echo "${{ secrets.KEY_PROPERTIES_BASE64 }}" | base64 --decode > android/key.properties
-
-      - name: Decode android/neumodore_key.jks
-        run: echo "${{ secrets.KEYSTORE_JKS_BASE64 }}" | base64 --decode > android/key.jks
+#      - name: Decode android/key.properties
+#        run: echo "${{ secrets.KEY_PROPERTIES_BASE64 }}" | base64 --decode > android/key.properties
+#
+#      - name: Decode android/neumodore_key.jks
+#        run: echo "${{ secrets.KEYSTORE_JKS_BASE64 }}" | base64 --decode > android/key.jks
 
       - name: Pub Get Packages
         run: flutter pub get
@@ -81,48 +81,58 @@ jobs:
           name: APK
           path: build/app/outputs/flutter-apk/app-${{env.APP_FLAVOR}}-release.apk
 
-      - name: Send mail
-        uses: dawidd6/action-send-mail@v3
-        with:
-          # Required mail server address:
-          server_address: smtp.gmail.com
-          # Required mail server port:
-          server_port: 465
-          # Optional (recommended): mail server username:
-          username: ${{secrets.MAIL_USERNAME}}
-          # Optional (recommended) mail server password:
-          password: ${{secrets.MAIL_PASSWORD}}
-          # Required mail subject:
-          subject: "New Build is here for ${{github.repository}} - ${{env.RELEASE_TAG}}"
-          # Required recipients' addresses:
-          to: ${{secrets.MAIL_TO}}
-          # Required sender full name (address can be skipped):
-          from: ${{secrets.MAIL_FROM_NAME}} # <user@example.com>
-          # Optional whether this connection use TLS (default is true if server_port is 465)
-          secure: true
-          # Optional plain body:
-          body: "Build job of ${{github.repository}} completed successfully! Download the APK for ${{env.RELEASE_TAG}} \nhttps://github.com/${{github.repository}}/releases/download/${{env.RELEASE_TAG}}/app-${{env.APP_FLAVOR}}-release.apk"
-          # Optional unsigned/invalid certificates allowance:
-          ignore_cert: true
-          #attachments: build/app/outputs/flutter-apk/app-release.apk
-          priority: high
 
-  release_internal:
-    name: Release Artifacts to internal track
-    needs: [ build ]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: Get APPBUNDLE from Artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: APPBUNDLE
-      - name: Release APPBUNDLE to Production track
-        uses: r0adkll/upload-google-play@v1
-        with:
-          serviceAccountJsonPlainText: ${{ secrets.PLAYSTORE_ACCOUNT_KEY }}
-          packageName: ${{ secrets.APP_PACKAGE_NAME }}
-          releaseFiles: app-${{env.APP_FLAVOR}}-release.aab
-          track: production
-          whatsNewDirectory: distribution/whatsnew
-          status: draft
+      - name: wa-notify
+          uses: mdb571/wa-action@master
+          with:
+            from: ${{ secrets.FROM_WHATSAPP_NUMBER }}
+            to: ${{secrets.TO_WHATSAPP_NUMBER }}
+          env:
+            TWILIO_ACCOUNT_SID: ${{ secrets.ACCOUNT_SID }}
+            TWILIO_AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
+
+#      - name: Send mail
+#        uses: dawidd6/action-send-mail@v3
+#        with:
+#          # Required mail server address:
+#          server_address: smtp.gmail.com
+#          # Required mail server port:
+#          server_port: 465
+#          # Optional (recommended): mail server username:
+#          username: ${{secrets.MAIL_USERNAME}}
+#          # Optional (recommended) mail server password:
+#          password: ${{secrets.MAIL_PASSWORD}}
+#          # Required mail subject:
+#          subject: "New Build is here for ${{github.repository}} - ${{env.RELEASE_TAG}}"
+#          # Required recipients' addresses:
+#          to: ${{secrets.MAIL_TO}}
+#          # Required sender full name (address can be skipped):
+#          from: ${{secrets.MAIL_FROM_NAME}} # <user@example.com>
+#          # Optional whether this connection use TLS (default is true if server_port is 465)
+#          secure: true
+#          # Optional plain body:
+#          body: "Build job of ${{github.repository}} completed successfully! Download the APK for ${{env.RELEASE_TAG}} \nhttps://github.com/${{github.repository}}/releases/download/${{env.RELEASE_TAG}}/app-${{env.APP_FLAVOR}}-release.apk"
+#          # Optional unsigned/invalid certificates allowance:
+#          ignore_cert: true
+#          #attachments: build/app/outputs/flutter-apk/app-release.apk
+#          priority: high
+#
+#  release_internal:
+#    name: Release Artifacts to internal track
+#    needs: [ build ]
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v1
+#      - name: Get APPBUNDLE from Artifacts
+#        uses: actions/download-artifact@v2
+#        with:
+#          name: APPBUNDLE
+#      - name: Release APPBUNDLE to Production track
+#        uses: r0adkll/upload-google-play@v1
+#        with:
+#          serviceAccountJsonPlainText: ${{ secrets.PLAYSTORE_ACCOUNT_KEY }}
+#          packageName: ${{ secrets.APP_PACKAGE_NAME }}
+#          releaseFiles: app-${{env.APP_FLAVOR}}-release.aab
+#          track: production
+#          whatsNewDirectory: distribution/whatsnew
+#          status: draft
