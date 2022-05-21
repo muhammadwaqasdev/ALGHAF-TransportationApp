@@ -3,7 +3,6 @@ import 'package:AlGhaf/src/services/local/navigation_service.dart';
 import 'package:AlGhaf/src/styles/app_colors.dart';
 import 'package:AlGhaf/src/views/user/car_ride/request_texi/request_texi_view.dart';
 import 'package:AlGhaf/src/views/user/drawer_main/drawer_main_view.dart';
-import 'package:AlGhaf/src/views/user/home/home_view.dart';
 import 'package:flutter/material.dart';
 
 class UserAppView extends StatefulWidget {
@@ -97,6 +96,15 @@ class _UserAppViewState extends State<UserAppView> {
         return Navigator(
           onGenerateRoute: (setting) => MaterialPageRoute(
               builder: (_) => Scaffold(
+                // drawer: DrawerMainView(),
+                //     onDrawerChanged: (val){
+                //         val ?
+                //         open() :
+                //         close();
+                //         setState(() {
+                //
+                //         });
+                //     },
                     body: Stack(
                       children: [
                         child!,
