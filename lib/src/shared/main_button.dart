@@ -7,7 +7,8 @@ class MainButton extends StatelessWidget {
   final String title;
   final bool isPrimary;
   final Function onTap;
-  const MainButton({Key? key,required this.title,required this.isPrimary,required this.onTap}) : super(key: key);
+  final double? borderRadius;
+  const MainButton({Key? key,required this.title, this.borderRadius, required this.isPrimary,required this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class MainButton extends StatelessWidget {
         width: context.screenSize().width,
         height: 60,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(100),
+          borderRadius: BorderRadius.circular(borderRadius ?? 100),
           color: isPrimary ? AppColors.primary : AppColors.secondary,
         ),
         padding: EdgeInsets.symmetric(horizontal: 0, vertical: 18, ),
