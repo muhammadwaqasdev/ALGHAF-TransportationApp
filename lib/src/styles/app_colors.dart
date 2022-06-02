@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class AppColors {
@@ -16,4 +17,10 @@ class AppColors {
   static HexColor blue = HexColor("#0057FF");
   static HexColor red = HexColor("#FF0000");
   static HexColor yellow = HexColor("#FDCD03");
+
+  static BoxShadow boxShadow = BoxShadow(
+    color: Color(0x3d000000),
+    blurRadius: 4,
+    offset: Offset(0, 4),
+  );
 }

@@ -31,12 +31,7 @@ class FlavorService {
     }
   }
 
-  static String get getBaseApi {
-    // return prod url
-    if (env == Env.user_prod) {
-      return "";
-    }
-    // return url other than prod one
-    return "";
+  static String get getGoogleMapBaseApi {
+    return "https://maps.googleapis.com/maps/";
   }
 }
