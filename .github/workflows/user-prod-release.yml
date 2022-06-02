@@ -35,7 +35,7 @@ jobs:
         run: echo RELEASE_TAG=Release-${{ steps.pubspec-data.outputs.data }}-$(date +%s) >> $GITHUB_ENV
 
       - name: Set flavor string
-        run: echo APP_FLAVOR=prod >> $GITHUB_ENV
+        run: echo APP_FLAVOR=user_prod >> $GITHUB_ENV
 
       - name: Setup Java
         uses: actions/setup-java@v1
@@ -58,12 +58,12 @@ jobs:
         run: flutter pub get
 
       - name: Build APPBUNDLE
-        run: flutter build appbundle --release --flavor ${{env.APP_FLAVOR}} -t lib/main_${{env.APP_FLAVOR}}.dart && flutter build apk --release --flavor ${{env.APP_FLAVOR}} -t lib/main_${{env.APP_FLAVOR}}.dart
+        run: flutter build appbundle --release --flavor user_prod -t lib/main_user.dart && flutter build apk --release --flavor user_prod -t lib/main_user.dart
 
       - name: Create Github Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "build/app/outputs/bundle/${{env.APP_FLAVOR}}Release/*.aab,build/app/outputs/flutter-apk/app-${{env.APP_FLAVOR}}-release.apk"
+          artifacts: "build/app/outputs/bundle/user-prod_Release/*.aab,build/app/outputs/flutter-apk/app-user-prod-release.apk"
           token: ${{ secrets.GH_TOKEN }}
           tag: "${{env.RELEASE_TAG}}"
           body: "${{ github.event.head_commit.message }}"
@@ -72,14 +72,14 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: APPBUNDLE
-          path: build/app/outputs/bundle/${{env.APP_FLAVOR}}Release/app-${{env.APP_FLAVOR}}-release.aab
+          path: build/app/outputs/bundle/user-prod-Release/app-user-prod-release.aab
 
 
       - name: Save APK to Artifacts
         uses: actions/upload-artifact@v2
         with:
           name: APK
-          path: build/app/outputs/flutter-apk/app-${{env.APP_FLAVOR}}-release.apk
+          path: build/app/outputs/flutter-apk/app-user-prod-release.apk
 
 
       - name: whatsapp-notify
