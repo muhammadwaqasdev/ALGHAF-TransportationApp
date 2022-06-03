@@ -3,8 +3,10 @@
 class Assets {
   static String get imagesBackArrowBig => "assets/images/backArrowBig.png";
   static String get imagesBackgroungImage => "assets/images/backgroungImage.png";
+  static String get imagesCallVector => "assets/images/callVector.png";
   static String get imagesCarLogo => "assets/images/carLogo.png";
   static String get imagesClockVectorWhite => "assets/images/clockVectorWhite.png";
+  static String get imagesCommentVector => "assets/images/commentVector.png";
   static String get imagesDubaiImage => "assets/images/dubaiImage.png";
   static String get imagesEndLocation => "assets/images/endLocation.png";
   static String get imagesExclusiveSelected => "assets/images/exclusiveSelected.png";
@@ -26,8 +28,12 @@ class Assets {
   static String get imagesPhoneIcon => "assets/images/phoneIcon.png";
   static String get imagesPlaneLogo => "assets/images/planeLogo.png";
   static String get imagesRemove => "assets/images/remove.png";
+  static String get imagesRiderImage => "assets/images/riderImage.png";
   static String get imagesRightArrowBlack => "assets/images/rightArrowBlack.png";
   static String get imagesRightArrowWhite => "assets/images/rightArrowWhite.png";
+  static String get imagesSpeakerVector => "assets/images/speakerVector.png";
   static String get imagesStanderdUnSelected => "assets/images/standerdUnSelected.png";
   static String get imagesStartlocation => "assets/images/startlocation.png";
+  static String get imagesStarVector => "assets/images/starVector.png";
+  static String get imagesThumsupVector => "assets/images/thumsupVector.png";
 }
