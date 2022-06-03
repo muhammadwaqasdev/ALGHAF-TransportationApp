@@ -34,8 +34,9 @@ class RequestTexiView extends StatelessWidget {
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(40), topRight: Radius.circular(40)),
               color: AppColors.primary,
-              panelBuilder: (controller) => (model.isInitStage) ? Padding(
+              panelBuilder: (controller) => (model.isInitStage) ? AnimatedContainer(
                 padding: const EdgeInsets.fromLTRB(32, 20, 32, 20),
+                duration: Duration(seconds: 1),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -116,8 +117,9 @@ class RequestTexiView extends StatelessWidget {
                     )
                   ],
                 ),
-              ) : Padding(
+              ) : AnimatedContainer(
                 padding: const EdgeInsets.fromLTRB(32, 20, 32, 20),
+                duration: Duration(seconds: 1),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
