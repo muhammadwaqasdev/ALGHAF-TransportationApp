@@ -1,4 +1,5 @@
 import 'package:AlGhaf/generated/assets.asset.dart';
+import 'package:AlGhaf/src/services/local/navigation_service.dart';
 import 'package:AlGhaf/src/shared/main_button.dart';
 import 'package:AlGhaf/src/shared/spacing.dart';
 import 'package:AlGhaf/src/styles/app_colors.dart';
@@ -65,13 +66,15 @@ class RiderContactCard extends StatelessWidget {
                     ],
                   ),
                 ],
-              )
+              ),
             ],
           ),
           Positioned(
             bottom: 0,
               right: 0,
-              child: SmallButton(title: "Call", onTap: (){}, isPrimary: false)),
+              child: SmallButton(title: "Call", onTap: (){
+                NavService.callingToRider();
+              }, isPrimary: false)),
         ],
       ),
     );

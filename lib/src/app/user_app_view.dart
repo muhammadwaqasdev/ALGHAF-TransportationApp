@@ -2,8 +2,11 @@ import 'package:AlGhaf/src/base/utils/constants.dart';
 import 'package:AlGhaf/src/services/local/navigation_service.dart';
 import 'package:AlGhaf/src/shared/rider_contact_card.dart';
 import 'package:AlGhaf/src/views/user/car_ride/request_texi/request_texi_view.dart';
+import 'package:AlGhaf/src/views/user/car_ride/ride_done/ride_done_view.dart';
+import 'package:AlGhaf/src/views/user/car_ride/rider_started/rider_started_view.dart';
 import 'package:AlGhaf/src/views/user/car_ride/texi_selection/texi_selection_view.dart';
 import 'package:AlGhaf/src/views/user/drawer_main/drawer_main_view.dart';
+import 'package:AlGhaf/src/views/user/splash/splash_view.dart';
 import 'package:flutter/material.dart';
 
 class UserAppView extends StatelessWidget {
@@ -20,8 +23,7 @@ class UserAppView extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
           appBarTheme: AppBarTheme(),
           fontFamily: 'Poppins'),
-      home: TexiSelectionView(),
-
+      home: SplashView(),
       builder: (context, child) {
         return Navigator(
           onGenerateRoute: (setting) => MaterialPageRoute(

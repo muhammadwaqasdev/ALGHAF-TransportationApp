@@ -18,12 +18,11 @@ class MainButton extends StatelessWidget {
       },
       child: Container(
         width: context.screenSize().width,
-        height: 60,
+        height: 45,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(borderRadius ?? 100),
           color: isPrimary ? AppColors.primary : AppColors.secondary,
         ),
-        padding: EdgeInsets.symmetric(horizontal: 0, vertical: 18, ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -31,7 +30,7 @@ class MainButton extends StatelessWidget {
             Text(
                 title,
                 textAlign: TextAlign.center,
-                style: TextStyling.h2.copyWith(color: AppColors.white)
+                style: TextStyling.h3.copyWith(color: AppColors.white)
             ),
           ],
         ),

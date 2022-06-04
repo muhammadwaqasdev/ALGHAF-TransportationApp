@@ -7,14 +7,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:stacked/stacked.dart';
 
-class TexiSelectionViewModel extends ReactiveViewModel with ApiViewModel {
+class RideStartedViewModel extends ReactiveViewModel with ApiViewModel {
 
 
-  bool isRiderReady = false;
+  bool isRideDone = false;
   TextEditingController originLocation = TextEditingController();
   TextEditingController destinationLocation = TextEditingController();
   final initialCameraPosition =
-      CameraPosition(target: LatLng(24.939725, 67.023667), zoom: 11.5);
+      CameraPosition(target: LatLng(24.939725, 67.023667), zoom: 30);
 
   GoogleMapController? mapController;
 
@@ -42,10 +42,7 @@ class TexiSelectionViewModel extends ReactiveViewModel with ApiViewModel {
     ],
   );
 
-  void init() async {
-    await Future.delayed(Duration(seconds: 30));
-    isRiderReady = true;
-    notifyListeners();
+  Future<void> init() async {
   }
 
 

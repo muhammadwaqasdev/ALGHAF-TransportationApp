@@ -8,6 +8,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:stacked/stacked.dart';
 
 class RequestTexiViewModel extends ReactiveViewModel with ApiViewModel {
+  bool isCashSelected = true;
 
   bool carSelectedExclusive = true;
   bool isInitStage = true;
