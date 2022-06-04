@@ -4,14 +4,14 @@ import 'package:AlGhaf/src/shared/app_screen.dart';
 import 'package:AlGhaf/src/shared/spacing.dart';
 import 'package:AlGhaf/src/styles/app_colors.dart';
 import 'package:AlGhaf/src/styles/text_theme.dart';
-import 'package:AlGhaf/src/views/user/car_ride/calling_to_rider/calling_to_rider_view_model.dart';
+import 'package:AlGhaf/src/views/user/parcel_delivery/calling_to_bike_rider/calling_to_bike_rider_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
-class CallingToRiderView extends StatelessWidget {
+class CallingToBikeRiderView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<CallingToRiderViewModel>.reactive(
+    return ViewModelBuilder<CallingToBikeRiderViewModel>.reactive(
       builder: (context, model, child) {
         return AppScreen(
             body: Container(
@@ -80,7 +80,7 @@ class CallingToRiderView extends StatelessWidget {
           ),
         ));
       },
-      viewModelBuilder: () => CallingToRiderViewModel(),
+      viewModelBuilder: () => CallingToBikeRiderViewModel(),
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:stacked/stacked.dart';
 
-class CallingToRiderViewModel extends ReactiveViewModel {
+class CallingToBikeRiderViewModel extends ReactiveViewModel {
   @override
   List<ReactiveServiceMixin> get reactiveServices => [];
 }

@@ -7,7 +7,6 @@ class ForgotPasswordViewModel extends BaseViewModel {
 
   void get listeners => notifyListeners();
 
-
   bool validator(context) {
     if (m.Form.of(context)?.validate() ?? false) {
       return false;

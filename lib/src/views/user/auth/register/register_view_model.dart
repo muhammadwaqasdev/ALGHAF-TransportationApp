@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart' as m;
 import 'package:stacked/stacked.dart';
 
 class RegisterViewModel extends BaseViewModel {
@@ -8,7 +7,6 @@ class RegisterViewModel extends BaseViewModel {
   TextEditingController phone = TextEditingController();
   TextEditingController rePassword = TextEditingController();
   TextEditingController password = TextEditingController();
-
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 

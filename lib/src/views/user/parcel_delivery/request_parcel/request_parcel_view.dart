@@ -2,23 +2,23 @@ import 'package:AlGhaf/generated/assets.asset.dart';
 import 'package:AlGhaf/src/base/utils/utils.dart';
 import 'package:AlGhaf/src/services/local/navigation_service.dart';
 import 'package:AlGhaf/src/shared/app_screen.dart';
-import 'package:AlGhaf/src/shared/carSelectionWidget.dart';
+import 'package:AlGhaf/src/shared/dropdown_menu.dart';
 import 'package:AlGhaf/src/shared/location_input_field.dart';
 import 'package:AlGhaf/src/shared/main_button.dart';
 import 'package:AlGhaf/src/shared/payment_method_card.dart';
 import 'package:AlGhaf/src/shared/spacing.dart';
 import 'package:AlGhaf/src/styles/app_colors.dart';
 import 'package:AlGhaf/src/styles/text_theme.dart';
-import 'package:AlGhaf/src/views/user/car_ride/request_texi/request_texi_view_model.dart';
+import 'package:AlGhaf/src/views/user/parcel_delivery/request_parcel/request_parcel_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:stacked/stacked.dart';
 
-class RequestTexiView extends StatelessWidget {
+class RequestParcelView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<RequestTexiViewModel>.reactive(
+    return ViewModelBuilder<RequestParcelViewModel>.reactive(
       builder: (context, model, child) {
         return AppScreen(
           body: AnimatedContainer(
@@ -62,52 +62,60 @@ class RequestTexiView extends StatelessWidget {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
+                                DropDownMenu(),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    CarSelecting(
-                                        title: "Standard",
-                                        selectedIcon:
-                                            Assets.imagesExclusiveSelected,
-                                        unSelectedIcon:
-                                            Assets.imagesStanderdUnSelected,
-                                        isSelected:
-                                            (model.carSelectedExclusive ==
-                                                    false)
-                                                ? true
-                                                : false,
-                                        onTap: () {
-                                          model.carSelectedExclusive =
-                                              !model.carSelectedExclusive;
+                                    InkWell(
+                                      onTap: () {
+                                        model.quantity = model.quantity + 1;
+                                        model.notifyListeners();
+                                      },
+                                      child: Image.asset(
+                                        Assets.imagesAddingIcon,
+                                        height: 24,
+                                        width: 24,
+                                      ),
+                                    ),
+                                    HorizontalSpacing(20),
+                                    Container(
+                                        height: 32,
+                                        decoration: BoxDecoration(
+                                          color: AppColors.white,
+                                          boxShadow: [AppColors.boxShadow],
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                        ),
+                                        padding: EdgeInsets.only(
+                                            left: 10, right: 10),
+                                        child: Center(
+                                          child: Text(
+                                            "${model.quantity}kg",
+                                            style: TextStyling.h4.copyWith(
+                                                color: AppColors.primary,
+                                                fontWeight: FontWeight.w700),
+                                          ),
+                                        )),
+                                    HorizontalSpacing(20),
+                                    InkWell(
+                                      onTap: () {
+                                        if (model.quantity > 1) {
+                                          model.quantity = model.quantity - 1;
                                           model.notifyListeners();
-                                        }),
-                                    HorizontalSpacing(40),
-                                    CarSelecting(
-                                        title: "Exclusive",
-                                        selectedIcon:
-                                            Assets.imagesExclusiveSelected,
-                                        unSelectedIcon:
-                                            Assets.imagesStanderdUnSelected,
-                                        isSelected:
-                                            (model.carSelectedExclusive == true)
-                                                ? true
-                                                : false,
-                                        onTap: () {
-                                          model.carSelectedExclusive =
-                                              !model.carSelectedExclusive;
-                                          model.notifyListeners();
-                                        }),
+                                        }
+                                      },
+                                      child: Image.asset(
+                                        Assets.imagesSubtractIcon,
+                                        height: 24,
+                                        width: 24,
+                                      ),
+                                    ),
                                   ],
                                 ),
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
-                                    Text(
-                                      "34 Km",
-                                      style: TextStyling.h4
-                                          .copyWith(color: AppColors.white),
-                                    ),
                                     Row(
                                       children: [
                                         Image.asset(
@@ -141,7 +149,7 @@ class RequestTexiView extends StatelessWidget {
                                   ],
                                 ),
                                 MainButton(
-                                  title: "Request for texi",
+                                  title: "Request for Parcel",
                                   isPrimary: false,
                                   onTap: () {
                                     model.isInitStage = false;
@@ -232,7 +240,7 @@ class RequestTexiView extends StatelessWidget {
                                   title: "Done",
                                   isPrimary: false,
                                   onTap: () {
-                                    NavService.texiSelection();
+                                    NavService.bikeRiderStarted();
                                   },
                                   borderRadius: 12,
                                 ),
@@ -297,7 +305,7 @@ class RequestTexiView extends StatelessWidget {
           ),
         );
       },
-      viewModelBuilder: () => RequestTexiViewModel(),
+      viewModelBuilder: () => RequestParcelViewModel(),
       onModelReady: (model) => model.init(),
     );
   }

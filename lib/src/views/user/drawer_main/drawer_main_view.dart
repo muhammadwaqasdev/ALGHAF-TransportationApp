@@ -8,10 +8,10 @@ class DrawerMainView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<DrawerMainViewModel>.reactive(
-        builder: (context, model, child) {
-          return AppScreen(
-              body: Text("Menu"));
-        },
-        viewModelBuilder: () => DrawerMainViewModel(),);
+      builder: (context, model, child) {
+        return AppScreen(body: Text("Menu"));
+      },
+      viewModelBuilder: () => DrawerMainViewModel(),
+    );
   }
 }

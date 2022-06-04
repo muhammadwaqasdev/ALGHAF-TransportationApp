@@ -29,7 +29,8 @@ class RegisterView extends StatelessWidget {
                       children: [
                         Text(
                           "Hi, Register yourself",
-                          style: TextStyling.h2.copyWith(color: AppColors.primary),
+                          style:
+                              TextStyling.h2.copyWith(color: AppColors.primary),
                         ),
                         Text(
                           "Create an account",
@@ -87,7 +88,8 @@ class RegisterView extends StatelessWidget {
                           isPrimary: true,
                           onTap: () {
                             (model.validator(context) == true)
-                                ? NavService.numberVerify() : null;
+                                ? NavService.numberVerify()
+                                : null;
                           },
                         ),
                       ],

@@ -14,5 +14,4 @@ class SignInViewModel extends BaseViewModel {
       return false;
     }
   }
-
 }

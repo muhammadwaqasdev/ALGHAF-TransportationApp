@@ -10,12 +10,19 @@ class CarSelecting extends StatelessWidget {
   final bool isSelected;
   final Function onTap;
 
-  CarSelecting({Key? key, required this.title, required this.selectedIcon, required this.unSelectedIcon, required this.isSelected, required this.onTap}) : super(key: key);
+  CarSelecting(
+      {Key? key,
+      required this.title,
+      required this.selectedIcon,
+      required this.unSelectedIcon,
+      required this.isSelected,
+      required this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
+      onTap: () {
         onTap();
       },
       child: Column(
@@ -26,12 +33,19 @@ class CarSelecting extends StatelessWidget {
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: isSelected ? AppColors.secondary : AppColors.white,
-              boxShadow: [isSelected ? AppColors.boxShadow : BoxShadow()]
-            ),
-            child: Center(child: Image.asset(isSelected ? selectedIcon : unSelectedIcon,height: 48,width: 48,)),
+                boxShadow: [isSelected ? AppColors.boxShadow : BoxShadow()]),
+            child: Center(
+                child: Image.asset(
+              isSelected ? selectedIcon : unSelectedIcon,
+              height: 48,
+              width: 48,
+            )),
           ),
           VerticalSpacing(5),
-          Text(title, style: TextStyling.h4.copyWith(color: AppColors.white),)
+          Text(
+            title,
+            style: TextStyling.h4.copyWith(color: AppColors.white),
+          )
         ],
       ),
     );

@@ -34,10 +34,13 @@ class BeInspired extends StatelessWidget {
                 height: 48,
                 width: 48,
                 decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: AppColors.secondary
-                ),
-                child: Center(child: Image.asset(Assets.imagesGlobe,height: 30,width: 30,)),
+                    shape: BoxShape.circle, color: AppColors.secondary),
+                child: Center(
+                    child: Image.asset(
+                  Assets.imagesGlobe,
+                  height: 30,
+                  width: 30,
+                )),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 10),
@@ -45,15 +48,25 @@ class BeInspired extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Need Help Where To Go?",style: TextStyling.h4.copyWith(color: AppColors.grey),),
+                    Text(
+                      "Need Help Where To Go?",
+                      style: TextStyling.h4.copyWith(color: AppColors.grey),
+                    ),
                     VerticalSpacing(10),
-                    Text("Find Great Destination",style: TextStyling.text,),
+                    Text(
+                      "Find Great Destination",
+                      style: TextStyling.text,
+                    ),
                   ],
                 ),
               )
             ],
           ),
-          Image.asset(Assets.imagesRightArrowBlack,height: 18,width: 20,),
+          Image.asset(
+            Assets.imagesRightArrowBlack,
+            height: 18,
+            width: 20,
+          ),
         ],
       ),
     );

@@ -1,13 +1,14 @@
 import 'dart:async';
 
 import 'package:AlGhaf/src/models/user_models/directions_model.dart';
+import 'package:AlGhaf/src/services/local/navigation_service.dart';
 import 'package:AlGhaf/src/services/remote/base/api_view_model.dart';
 import 'package:AlGhaf/src/styles/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:stacked/stacked.dart';
 
-class RideStartedViewModel extends ReactiveViewModel with ApiViewModel {
+class BikeRiderStartedViewModel extends ReactiveViewModel with ApiViewModel {
   bool isRideDone = false;
   TextEditingController originLocation = TextEditingController();
   TextEditingController destinationLocation = TextEditingController();
@@ -39,7 +40,10 @@ class RideStartedViewModel extends ReactiveViewModel with ApiViewModel {
     ],
   );
 
-  Future<void> init() async {}
+  void init() async {
+    await Future.delayed(Duration(seconds: 30));
+    NavService.parcelDelivered();
+  }
 
   @override
   List<ReactiveServiceMixin> get reactiveServices => [];

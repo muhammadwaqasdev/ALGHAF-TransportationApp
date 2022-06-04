@@ -7,9 +7,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:stacked/stacked.dart';
 
-class RequestTexiViewModel extends ReactiveViewModel with ApiViewModel {
+class RequestParcelViewModel extends ReactiveViewModel with ApiViewModel {
   bool isCashSelected = true;
 
+  int quantity = 1;
   bool carSelectedExclusive = true;
   bool isInitStage = true;
   TextEditingController originLocation = TextEditingController();

@@ -8,7 +8,10 @@ class NumericPad extends StatelessWidget {
   final Function() onTap;
   final bool isValidate;
 
-  NumericPad({required this.onNumberSelected, required this.onTap,required this.isValidate});
+  NumericPad(
+      {required this.onNumberSelected,
+      required this.onTap,
+      required this.isValidate});
 
   @override
   Widget build(BuildContext context) {
@@ -156,17 +159,18 @@ class NumericPad extends StatelessWidget {
             shadowColor: Color(0xFFF5F4F9),
             child: Container(
               decoration: BoxDecoration(
-                color: (isValidate == true) ? AppColors.primary : AppColors.grey,
+                color:
+                    (isValidate == true) ? AppColors.primary : AppColors.grey,
                 borderRadius: BorderRadius.all(
                   Radius.circular(5),
                 ),
               ),
               child: Center(
                   child: Image.asset(
-                    Assets.imagesRightArrowWhite,
-                    height: 20,
-                    width: 8,
-                  )),
+                Assets.imagesRightArrowWhite,
+                height: 20,
+                width: 8,
+              )),
             ),
           ),
         ),

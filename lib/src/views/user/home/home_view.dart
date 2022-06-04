@@ -21,9 +21,11 @@ class HomeView extends StatelessWidget {
       MainCategory(logo: Assets.imagesPlaneLogo, onTap: () {}, title: "Flight"),
       MainCategory(logo: Assets.imagesHotelLogo, onTap: () {}, title: "Hotel"),
       MainCategory(
-          logo: Assets.imagesCarLogo, onTap: () {
+          logo: Assets.imagesCarLogo,
+          onTap: () {
             NavService.requestTexi();
-      }, title: "Car Hires"),
+          },
+          title: "Car Hires"),
       MainCategory(
           logo: Assets.imagesParselLogo, onTap: () {}, title: "Parsel"),
       HorizontalSpacing(),
@@ -115,9 +117,12 @@ class HomeView extends StatelessWidget {
                     VerticalSpacing(32),
                     GridView(
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2, mainAxisSpacing: 15,crossAxisSpacing: 15,),
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 15,
+                        crossAxisSpacing: 15,
+                      ),
                       physics: NeverScrollableScrollPhysics(),
-                      padding: EdgeInsets.only(left: 20,right: 20),
+                      padding: EdgeInsets.only(left: 20, right: 20),
                       shrinkWrap: true,
                       children: [
                         TourHome(),

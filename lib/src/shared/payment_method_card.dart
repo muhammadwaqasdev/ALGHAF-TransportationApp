@@ -11,7 +11,14 @@ class PaymentMethodCardTile extends StatelessWidget {
   final bool isSelected;
   final Function onTap;
 
-  const PaymentMethodCardTile({Key? key, required this.title, required this.cardNumber, required this.icon, required this.isSelected, required this.onTap}) : super(key: key);
+  const PaymentMethodCardTile(
+      {Key? key,
+      required this.title,
+      required this.cardNumber,
+      required this.icon,
+      required this.isSelected,
+      required this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +27,7 @@ class PaymentMethodCardTile extends StatelessWidget {
       width: context.screenSize().width,
       padding: EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius: BorderRadius.circular(5)
-      ),
+          color: AppColors.white, borderRadius: BorderRadius.circular(5)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -33,39 +38,52 @@ class PaymentMethodCardTile extends StatelessWidget {
                 width: 40,
                 decoration: BoxDecoration(
                     color: AppColors.primary,
-                    borderRadius: BorderRadius.circular(5)
-                ),
-                child: Center(child: Image.asset(icon, height: 24,width: 24,)),
+                    borderRadius: BorderRadius.circular(5)),
+                child: Center(
+                    child: Image.asset(
+                  icon,
+                  height: 24,
+                  width: 24,
+                )),
               ),
               HorizontalSpacing(),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(title,style: TextStyling.h4,),
-                  Text(cardNumber,style: TextStyling.text.copyWith(color: AppColors.secondary),),
+                  Text(
+                    title,
+                    style: TextStyling.h4,
+                  ),
+                  Text(
+                    cardNumber,
+                    style:
+                        TextStyling.text.copyWith(color: AppColors.secondary),
+                  ),
                 ],
               )
             ],
           ),
-          isSelected ? Container(
-            height: 22,
-            width: 22,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: AppColors.black,
-            ),
-            child: Center(
-              child: Container(
-                height: 10,
-                width: 10,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: AppColors.secondary,
-                ),
-              ),
-            ),
-          ) : SizedBox()
+          isSelected
+              ? Container(
+                  height: 22,
+                  width: 22,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: AppColors.black,
+                  ),
+                  child: Center(
+                    child: Container(
+                      height: 10,
+                      width: 10,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: AppColors.secondary,
+                      ),
+                    ),
+                  ),
+                )
+              : SizedBox()
         ],
       ),
     );

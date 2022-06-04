@@ -7,8 +7,8 @@ import 'package:AlGhaf/src/styles/app_colors.dart';
 import 'package:AlGhaf/src/styles/text_theme.dart';
 import 'package:AlGhaf/src/views/user/auth/forgot_password/forgot_password_view_model.dart';
 import 'package:flutter/material.dart';
-import 'package:stacked/stacked.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:stacked/stacked.dart';
 
 class ForgotPasswordView extends StatelessWidget {
   @override
@@ -38,16 +38,14 @@ class ForgotPasswordView extends StatelessWidget {
                     ),
                     Text(
                       "Forgot Password",
-                      style: TextStyling.h1
-                          .copyWith(color: AppColors.primary),
+                      style: TextStyling.h1.copyWith(color: AppColors.primary),
                     ),
                     SizedBox(
                       height: 5,
                     ),
                     Text(
                       "Please enter your email address",
-                      style: TextStyling.h3
-                          .copyWith(color: AppColors.grey),
+                      style: TextStyling.h3.copyWith(color: AppColors.grey),
                     ),
                     SizedBox(
                       height: 37,
@@ -81,8 +79,7 @@ class ForgotPasswordView extends StatelessWidget {
                             timeInSecForIosWeb: 1,
                             backgroundColor: AppColors.white,
                             textColor: AppColors.primary,
-                            fontSize: 16.0
-                        );
+                            fontSize: 16.0);
                       },
                     ),
                   ],

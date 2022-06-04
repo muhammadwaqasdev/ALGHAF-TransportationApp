@@ -8,8 +8,6 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:stacked/stacked.dart';
 
 class TexiSelectionViewModel extends ReactiveViewModel with ApiViewModel {
-
-
   bool isRiderReady = false;
   TextEditingController originLocation = TextEditingController();
   TextEditingController destinationLocation = TextEditingController();
@@ -17,7 +15,6 @@ class TexiSelectionViewModel extends ReactiveViewModel with ApiViewModel {
       CameraPosition(target: LatLng(24.939725, 67.023667), zoom: 11.5);
 
   GoogleMapController? mapController;
-
 
   Directions? info;
   Marker origin = Marker(
@@ -47,8 +44,6 @@ class TexiSelectionViewModel extends ReactiveViewModel with ApiViewModel {
     isRiderReady = true;
     notifyListeners();
   }
-
-
 
   @override
   List<ReactiveServiceMixin> get reactiveServices => [];
