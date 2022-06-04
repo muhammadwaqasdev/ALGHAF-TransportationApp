@@ -41,4 +41,19 @@ class NavService {
 
   static Future<dynamic>? home({dynamic arguments}) => _navigationService!
       .clearStackAndShow(Routes.homeView, arguments: arguments);
+
+  static Future<dynamic>? requestTexi({dynamic arguments}) => _navigationService!
+      .navigateTo(Routes.requestTexiView, arguments: arguments);
+
+  static Future<dynamic>? texiSelection({dynamic arguments}) => _navigationService!
+      .navigateTo(Routes.texiSelectionView, arguments: arguments);
+
+  static Future<dynamic>? callingToRider({dynamic arguments}) => _navigationService!
+      .navigateTo(Routes.callingToRiderView, arguments: arguments);
+
+  static Future<dynamic>? rideStarted({dynamic arguments}) => _navigationService!
+      .navigateTo(Routes.rideStartedView, arguments: arguments);
+
+  static Future<dynamic>? rideDone({dynamic arguments}) => _navigationService!
+      .clearStackAndShow(Routes.rideDoneView, arguments: arguments);
 }

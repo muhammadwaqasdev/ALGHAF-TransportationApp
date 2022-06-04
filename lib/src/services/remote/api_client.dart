@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:AlGhaf/src/models/wrappers/response_wrapper.dart';
-import 'package:AlGhaf/src/services/local/flavor_service.dart';
 import 'package:dio/dio.dart';
 
 const _defaultConnectTimeout = Duration.millisecondsPerMinute;
@@ -12,13 +11,13 @@ class ApiClient {
 
   final List<Interceptor>? interceptors;
 
-  ApiClient(Dio dio, {this.interceptors}) {
+  ApiClient(Dio dio, {this.interceptors,required String baseUrl}) {
     _dio = dio;
     final customHeaders = Map<String, dynamic>();
     customHeaders['Content-Type'] = 'application/json';
     customHeaders['Accept'] = 'application/json';
     _dio!
-      ..options.baseUrl = FlavorService.getBaseApi
+      ..options.baseUrl = baseUrl
       ..options.connectTimeout = _defaultConnectTimeout
       ..options.receiveTimeout = _defaultReceiveTimeout
       ..httpClientAdapter

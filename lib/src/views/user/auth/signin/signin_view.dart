@@ -30,11 +30,11 @@ class SignInView extends StatelessWidget {
                       children: [
                         Text(
                           "Hi, Welcome back!",
-                          style: TextStyling.h1.copyWith(color: AppColors.primary),
+                          style: TextStyling.h2.copyWith(color: AppColors.primary),
                         ),
                         Text(
                           "Sign in to your account",
-                          style: TextStyling.h3.copyWith(color: AppColors.grey),
+                          style: TextStyling.h4.copyWith(color: AppColors.grey),
                         ),
                         VerticalSpacing(50),
                         CustomInput(
@@ -68,7 +68,7 @@ class SignInView extends StatelessWidget {
                               },
                               child: Text(
                                 "Forgot Password?",
-                                style: TextStyling.h4
+                                style: TextStyling.text
                                     .copyWith(color: AppColors.secondary),
                               ),
                             ),
@@ -80,7 +80,7 @@ class SignInView extends StatelessWidget {
                           children: [
                             Text(
                               "Sign In With Account",
-                              style: TextStyling.h4
+                              style: TextStyling.text
                                   .copyWith(color: AppColors.secondary),
                             ),
                           ],

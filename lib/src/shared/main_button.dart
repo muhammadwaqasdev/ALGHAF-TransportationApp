@@ -7,7 +7,8 @@ class MainButton extends StatelessWidget {
   final String title;
   final bool isPrimary;
   final Function onTap;
-  const MainButton({Key? key,required this.title,required this.isPrimary,required this.onTap}) : super(key: key);
+  final double? borderRadius;
+  const MainButton({Key? key,required this.title, this.borderRadius, required this.isPrimary,required this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +18,11 @@ class MainButton extends StatelessWidget {
       },
       child: Container(
         width: context.screenSize().width,
-        height: 60,
+        height: 45,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(100),
+          borderRadius: BorderRadius.circular(borderRadius ?? 100),
           color: isPrimary ? AppColors.primary : AppColors.secondary,
         ),
-        padding: EdgeInsets.symmetric(horizontal: 0, vertical: 18, ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -30,9 +30,40 @@ class MainButton extends StatelessWidget {
             Text(
                 title,
                 textAlign: TextAlign.center,
-                style: TextStyling.h2.copyWith(color: AppColors.white)
+                style: TextStyling.h3.copyWith(color: AppColors.white)
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class SmallButton extends StatelessWidget {
+  final String title;
+  final Function onTap;
+  final bool isPrimary;
+
+  const SmallButton({Key? key, required this.title, required this.onTap, required this.isPrimary}) : super(key: key);
+
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: (){
+        onTap();
+      },
+      child: Container(
+        width: 90,
+        decoration: BoxDecoration(
+          color: isPrimary ? AppColors.primary : AppColors.secondary,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        padding: EdgeInsets.symmetric(vertical: 7,horizontal: 16),
+        child: Text(
+            title,
+            textAlign: TextAlign.center,
+            style: TextStyling.h3.copyWith(color: AppColors.white)
         ),
       ),
     );
