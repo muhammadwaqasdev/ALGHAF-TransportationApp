@@ -11,7 +11,7 @@ class ApiClient {
 
   final List<Interceptor>? interceptors;
 
-  ApiClient(Dio dio, {this.interceptors,required String baseUrl}) {
+  ApiClient(Dio dio, {this.interceptors, required String baseUrl}) {
     _dio = dio;
     final customHeaders = Map<String, dynamic>();
     customHeaders['Content-Type'] = 'application/json';

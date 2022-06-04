@@ -48,8 +48,7 @@ class CodeVerifyView extends StatelessWidget {
                   Text(
                     "Check your sms inbox we sent \n you at +0198 367 8908",
                     textAlign: TextAlign.center,
-                    style: TextStyling.text
-                        .copyWith(color: AppColors.grey),
+                    style: TextStyling.text.copyWith(color: AppColors.grey),
                   ),
                   SizedBox(
                     height: 24,
@@ -64,8 +63,7 @@ class CodeVerifyView extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: AppColors.white,
                           borderRadius: BorderRadius.circular(15),
-                          border:
-                              Border.all(color: AppColors.grey, width: 1)),
+                          border: Border.all(color: AppColors.grey, width: 1)),
                     ),
                   ),
                   SizedBox(

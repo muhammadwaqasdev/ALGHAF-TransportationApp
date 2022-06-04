@@ -13,21 +13,24 @@ class FlavorService {
 
   static init(PackageInfo info) {
     final flavor = info.packageName.split(".").last;
-    switch(flavor) {
-      case 'user': {
-        env = Env.user_prod;
-      }
-      break;
+    switch (flavor) {
+      case 'user':
+        {
+          env = Env.user_prod;
+        }
+        break;
 
-      case 'rider': {
-        env = Env.rider_prod;
-      }
-      break;
+      case 'rider':
+        {
+          env = Env.rider_prod;
+        }
+        break;
 
-      case 'admin': {
-        env = Env.admin_prod;
-      }
-      break;
+      case 'admin':
+        {
+          env = Env.admin_prod;
+        }
+        break;
     }
   }
 

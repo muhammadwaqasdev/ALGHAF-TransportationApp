@@ -28,22 +28,35 @@ class RiderContactCard extends StatelessWidget {
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(12),
-                      child: Image.asset(
-                    Assets.imagesRiderImage,
-                    height: 60,
-                    width: 60,
-                  ),),
+                    child: Image.asset(
+                      Assets.imagesRiderImage,
+                      height: 60,
+                      width: 60,
+                    ),
+                  ),
                   HorizontalSpacing(15),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Cihan soysakal",style: TextStyling.h4.copyWith(color: AppColors.primary),),
+                      Text(
+                        "Cihan soysakal",
+                        style:
+                            TextStyling.h4.copyWith(color: AppColors.primary),
+                      ),
                       VerticalSpacing(),
                       Row(
                         children: [
-                          Image.asset(Assets.imagesStarVector,height: 17,width: 17,),
-                          Text("4.4",style: TextStyling.h4.copyWith(color: AppColors.primary),),
+                          Image.asset(
+                            Assets.imagesStarVector,
+                            height: 17,
+                            width: 17,
+                          ),
+                          Text(
+                            "4.4",
+                            style: TextStyling.h4
+                                .copyWith(color: AppColors.primary),
+                          ),
                         ],
                       )
                     ],
@@ -54,15 +67,31 @@ class RiderContactCard extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Image.asset(Assets.imagesThumsupVector,height: 17,width: 17,),
-                      Text("15",style: TextStyling.h4.copyWith(color: AppColors.primary),),
+                      Image.asset(
+                        Assets.imagesThumsupVector,
+                        height: 17,
+                        width: 17,
+                      ),
+                      Text(
+                        "15",
+                        style:
+                            TextStyling.h4.copyWith(color: AppColors.primary),
+                      ),
                     ],
                   ),
                   HorizontalSpacing(15),
                   Row(
                     children: [
-                      Image.asset(Assets.imagesCommentVector,height: 17,width: 17,),
-                      Text("4",style: TextStyling.h4.copyWith(color: AppColors.primary),),
+                      Image.asset(
+                        Assets.imagesCommentVector,
+                        height: 17,
+                        width: 17,
+                      ),
+                      Text(
+                        "4",
+                        style:
+                            TextStyling.h4.copyWith(color: AppColors.primary),
+                      ),
                     ],
                   ),
                 ],
@@ -70,11 +99,14 @@ class RiderContactCard extends StatelessWidget {
             ],
           ),
           Positioned(
-            bottom: 0,
+              bottom: 0,
               right: 0,
-              child: SmallButton(title: "Call", onTap: (){
-                NavService.callingToRider();
-              }, isPrimary: false)),
+              child: SmallButton(
+                  title: "Call",
+                  onTap: () {
+                    NavService.callingToRider();
+                  },
+                  isPrimary: false)),
         ],
       ),
     );

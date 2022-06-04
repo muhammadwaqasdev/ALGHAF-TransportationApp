@@ -30,11 +30,13 @@ class NavService {
   static Future<dynamic>? register({dynamic arguments}) => _navigationService!
       .clearStackAndShow(Routes.registerView, arguments: arguments);
 
-  static Future<dynamic>? forgotPassword({dynamic arguments}) => _navigationService!
-      .navigateTo(Routes.forgotPasswordView, arguments: arguments);
+  static Future<dynamic>? forgotPassword({dynamic arguments}) =>
+      _navigationService!
+          .navigateTo(Routes.forgotPasswordView, arguments: arguments);
 
-  static Future<dynamic>? numberVerify({dynamic arguments}) => _navigationService!
-      .navigateTo(Routes.numberVerifyView, arguments: arguments);
+  static Future<dynamic>? numberVerify({dynamic arguments}) =>
+      _navigationService!
+          .navigateTo(Routes.numberVerifyView, arguments: arguments);
 
   static Future<dynamic>? codeVerify({dynamic arguments}) => _navigationService!
       .navigateTo(Routes.codeVerifyView, arguments: arguments);
@@ -42,18 +44,38 @@ class NavService {
   static Future<dynamic>? home({dynamic arguments}) => _navigationService!
       .clearStackAndShow(Routes.homeView, arguments: arguments);
 
-  static Future<dynamic>? requestTexi({dynamic arguments}) => _navigationService!
-      .navigateTo(Routes.requestTexiView, arguments: arguments);
+  static Future<dynamic>? requestTexi({dynamic arguments}) =>
+      _navigationService!
+          .navigateTo(Routes.requestTexiView, arguments: arguments);
 
-  static Future<dynamic>? texiSelection({dynamic arguments}) => _navigationService!
-      .navigateTo(Routes.texiSelectionView, arguments: arguments);
+  static Future<dynamic>? texiSelection({dynamic arguments}) =>
+      _navigationService!
+          .navigateTo(Routes.texiSelectionView, arguments: arguments);
 
-  static Future<dynamic>? callingToRider({dynamic arguments}) => _navigationService!
-      .navigateTo(Routes.callingToRiderView, arguments: arguments);
+  static Future<dynamic>? callingToRider({dynamic arguments}) =>
+      _navigationService!
+          .navigateTo(Routes.callingToRiderView, arguments: arguments);
 
-  static Future<dynamic>? rideStarted({dynamic arguments}) => _navigationService!
-      .navigateTo(Routes.rideStartedView, arguments: arguments);
+  static Future<dynamic>? rideStarted({dynamic arguments}) =>
+      _navigationService!
+          .navigateTo(Routes.rideStartedView, arguments: arguments);
 
   static Future<dynamic>? rideDone({dynamic arguments}) => _navigationService!
       .clearStackAndShow(Routes.rideDoneView, arguments: arguments);
+
+  static Future<dynamic>? bikeRiderStarted({dynamic arguments}) =>
+      _navigationService!
+          .clearStackAndShow(Routes.bikeRiderStartedView, arguments: arguments);
+
+  static Future<dynamic>? callingToBikeRider({dynamic arguments}) =>
+      _navigationService!.clearStackAndShow(Routes.callingToBikeRiderView,
+          arguments: arguments);
+
+  static Future<dynamic>? parcelDelivered({dynamic arguments}) =>
+      _navigationService!
+          .clearStackAndShow(Routes.parcelDeliveredView, arguments: arguments);
+
+  static Future<dynamic>? requestParcel({dynamic arguments}) =>
+      _navigationService!
+          .clearStackAndShow(Routes.requestParcelView, arguments: arguments);
 }

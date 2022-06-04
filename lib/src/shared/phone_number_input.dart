@@ -41,8 +41,7 @@ class PhoneNumberInput extends StatelessWidget {
             ),
             Container(
               padding: EdgeInsets.fromLTRB(0, 24, 18, 24),
-              child: Text(phoneNumber,
-                  style: TextStyling.h2),
+              child: Text(phoneNumber, style: TextStyling.h2),
             )
           ],
         ),

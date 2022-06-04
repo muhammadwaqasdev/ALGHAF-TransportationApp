@@ -1,7 +1,7 @@
+import 'package:AlGhaf/.env.dart';
 import 'package:AlGhaf/src/models/user_models/directions_model.dart';
 import 'package:AlGhaf/src/services/local/flavor_service.dart';
 import 'package:AlGhaf/src/services/remote/api_client.dart';
-import 'package:AlGhaf/.env.dart';
 import 'package:dio/dio.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -10,7 +10,8 @@ class ApiService {
 
   ApiService() {
     var dio = Dio();
-    _apiGoogleMapClient = ApiClient(dio,baseUrl: FlavorService.getGoogleMapBaseApi);
+    _apiGoogleMapClient =
+        ApiClient(dio, baseUrl: FlavorService.getGoogleMapBaseApi);
   }
 
   Future<Directions?> getDirections({

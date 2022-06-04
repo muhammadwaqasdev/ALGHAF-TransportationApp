@@ -28,163 +28,233 @@ class TexiSelectionView extends StatelessWidget {
               ],
               isDraggable: true,
               minHeight: 40,
-              maxHeight: (model.isRiderReady == true) ? 400 : context.screenSize().height - 100,
+              maxHeight: (model.isRiderReady == true)
+                  ? 400
+                  : context.screenSize().height - 100,
               backdropEnabled: false,
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(40), topRight: Radius.circular(40)),
               color: AppColors.primary,
-              panelBuilder: (controller) => (model.isRiderReady == true) ? AnimatedContainer(
-                padding: const EdgeInsets.fromLTRB(32, 20, 32, 20),
-                duration: Duration(seconds: 1),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Positioned(
-                      left: context.screenSize().width / 2 - 50,
-                      right: context.screenSize().width / 2 - 50,
-                      top: 20,
-                      child: InkWell(
-                        onTap: () {},
-                        child: Container(
-                          height: 6,
-                          width: 100,
-                          decoration: BoxDecoration(
-                              color: AppColors.white,
-                              borderRadius: BorderRadius.circular(100)),
-                        ),
-                      ),
-                    ),
-                    VerticalSpacing(20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(Assets.imagesStartlocation,height: 20,width: 8,),
-                        HorizontalSpacing(5),
-                        Text("Helden st",style: TextStyling.text.copyWith(color: AppColors.white),),
-                        HorizontalSpacing(),
-                        Container(
-                          height: 15,
-                          width: 2,
-                          decoration: BoxDecoration(
-                            color: AppColors.white,
-                            borderRadius: BorderRadius.circular(10)
-                          ),
-                        ),
-                        HorizontalSpacing(),
-                        Image.asset(Assets.imagesEndLocation,height: 20,width: 16,),
-                        HorizontalSpacing(5),
-                        Text("Chalotte St",style: TextStyling.text.copyWith(color: AppColors.white),),
-                      ],
-                    ),
-                    VerticalSpacing(26),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(100),
-                              child: Image.asset(
-                                Assets.imagesRiderImage,
-                                height: 58,
-                                width: 58,
-                              ),),
-                            HorizontalSpacing(15),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text("Cihan soysakal",style: TextStyling.h4.copyWith(color: AppColors.white),),
-                                VerticalSpacing(),
-                                Text("Toyota (EDF568-354)",style: TextStyling.h4.copyWith(color: AppColors.black),),
-                              ],
-                            )
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Image.asset(Assets.imagesStarVector,height: 17,width: 17,),
-                            Text("4.4",style: TextStyling.h4.copyWith(color: AppColors.white),),
-                          ],
-                        )
-                      ],
-                    ),
-                    VerticalSpacing(34),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text("34 Km",style: TextStyling.h4.copyWith(color: AppColors.white),),
-                        Row(
-                          children: [
-                            Image.asset(Assets.imagesClockVectorWhite,height: 20,width: 20,),
-                            HorizontalSpacing(5),
-                            Text("1h30m",style: TextStyling.h4.copyWith(color: AppColors.white),)
-                          ],
-                        ),
-                      ],
-                    ),
-                    VerticalSpacing(34),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(Assets.imagesMoneyVectorWhite,height: 20,width: 20,),
-                        HorizontalSpacing(5),
-                        Text("\$45.20",style: TextStyling.h4.copyWith(color: AppColors.white),),
-                      ],
-                    ),
-                    VerticalSpacing(34),
-                    Text("30 Sec",style: TextStyling.h4.copyWith(color: AppColors.red),),
-                    MainButton(title: "Continue", isPrimary: false, onTap: (){
-                      NavService.rideStarted();
-                    },borderRadius: 12,),
-                  ],
-                ),
-              ) : AnimatedContainer(
-                padding: const EdgeInsets.fromLTRB(32, 20, 32, 20),
-                duration: Duration(seconds: 1),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Positioned(
-                      left: context.screenSize().width / 2 - 50,
-                      right: context.screenSize().width / 2 - 50,
-                      top: 20,
-                      child: InkWell(
-                        onTap: () {},
-                        child: Container(
-                          height: 6,
-                          width: 100,
-                          decoration: BoxDecoration(
-                              color: AppColors.white,
-                              borderRadius: BorderRadius.circular(100)),
-                        ),
-                      ),
-                    ),
-                    VerticalSpacing(20),
-                    SingleChildScrollView(
-                      physics: BouncingScrollPhysics(),
+              panelBuilder: (controller) => (model.isRiderReady == true)
+                  ? AnimatedContainer(
+                      padding: const EdgeInsets.fromLTRB(32, 20, 32, 20),
+                      duration: Duration(seconds: 1),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
+                          Positioned(
+                            left: context.screenSize().width / 2 - 50,
+                            right: context.screenSize().width / 2 - 50,
+                            top: 20,
+                            child: InkWell(
+                              onTap: () {},
+                              child: Container(
+                                height: 6,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                    color: AppColors.white,
+                                    borderRadius: BorderRadius.circular(100)),
+                              ),
+                            ),
+                          ),
+                          VerticalSpacing(20),
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text("Riders",style: TextStyling.h2.copyWith(color: AppColors.white),),
+                              Image.asset(
+                                Assets.imagesStartlocation,
+                                height: 20,
+                                width: 8,
+                              ),
+                              HorizontalSpacing(5),
+                              Text(
+                                "Helden st",
+                                style: TextStyling.text
+                                    .copyWith(color: AppColors.white),
+                              ),
+                              HorizontalSpacing(),
+                              Container(
+                                height: 15,
+                                width: 2,
+                                decoration: BoxDecoration(
+                                    color: AppColors.white,
+                                    borderRadius: BorderRadius.circular(10)),
+                              ),
+                              HorizontalSpacing(),
+                              Image.asset(
+                                Assets.imagesEndLocation,
+                                height: 20,
+                                width: 16,
+                              ),
+                              HorizontalSpacing(5),
+                              Text(
+                                "Chalotte St",
+                                style: TextStyling.text
+                                    .copyWith(color: AppColors.white),
+                              ),
                             ],
                           ),
-                          VerticalSpacing(30),
-                          RiderContactCard(),
-                          RiderContactCard(),
-                          RiderContactCard(),
-                          RiderContactCard(),
-
+                          VerticalSpacing(26),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(100),
+                                    child: Image.asset(
+                                      Assets.imagesRiderImage,
+                                      height: 58,
+                                      width: 58,
+                                    ),
+                                  ),
+                                  HorizontalSpacing(15),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "Cihan soysakal",
+                                        style: TextStyling.h4
+                                            .copyWith(color: AppColors.white),
+                                      ),
+                                      VerticalSpacing(),
+                                      Text(
+                                        "Toyota (EDF568-354)",
+                                        style: TextStyling.h4
+                                            .copyWith(color: AppColors.black),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Image.asset(
+                                    Assets.imagesStarVector,
+                                    height: 17,
+                                    width: 17,
+                                  ),
+                                  Text(
+                                    "4.4",
+                                    style: TextStyling.h4
+                                        .copyWith(color: AppColors.white),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                          VerticalSpacing(34),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text(
+                                "34 Km",
+                                style: TextStyling.h4
+                                    .copyWith(color: AppColors.white),
+                              ),
+                              Row(
+                                children: [
+                                  Image.asset(
+                                    Assets.imagesClockVectorWhite,
+                                    height: 20,
+                                    width: 20,
+                                  ),
+                                  HorizontalSpacing(5),
+                                  Text(
+                                    "1h30m",
+                                    style: TextStyling.h4
+                                        .copyWith(color: AppColors.white),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
+                          VerticalSpacing(34),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                Assets.imagesMoneyVectorWhite,
+                                height: 20,
+                                width: 20,
+                              ),
+                              HorizontalSpacing(5),
+                              Text(
+                                "\$45.20",
+                                style: TextStyling.h4
+                                    .copyWith(color: AppColors.white),
+                              ),
+                            ],
+                          ),
+                          VerticalSpacing(34),
+                          Text(
+                            "30 Sec",
+                            style:
+                                TextStyling.h4.copyWith(color: AppColors.red),
+                          ),
+                          MainButton(
+                            title: "Continue",
+                            isPrimary: false,
+                            onTap: () {
+                              NavService.rideStarted();
+                            },
+                            borderRadius: 12,
+                          ),
                         ],
                       ),
                     )
-                  ],
-                ),
-              ),
+                  : AnimatedContainer(
+                      padding: const EdgeInsets.fromLTRB(32, 20, 32, 20),
+                      duration: Duration(seconds: 1),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Positioned(
+                            left: context.screenSize().width / 2 - 50,
+                            right: context.screenSize().width / 2 - 50,
+                            top: 20,
+                            child: InkWell(
+                              onTap: () {},
+                              child: Container(
+                                height: 6,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                    color: AppColors.white,
+                                    borderRadius: BorderRadius.circular(100)),
+                              ),
+                            ),
+                          ),
+                          VerticalSpacing(20),
+                          SingleChildScrollView(
+                            physics: BouncingScrollPhysics(),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Text(
+                                      "Riders",
+                                      style: TextStyling.h2
+                                          .copyWith(color: AppColors.white),
+                                    ),
+                                  ],
+                                ),
+                                VerticalSpacing(30),
+                                RiderContactCard(),
+                                RiderContactCard(),
+                                RiderContactCard(),
+                                RiderContactCard(),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
               body: Stack(
                 children: [
                   GoogleMap(
@@ -216,8 +286,12 @@ class TexiSelectionView extends StatelessWidget {
                     ),
                   ),
                   Align(
-                    alignment: Alignment.center,
-                      child: Image.asset(Assets.imagesPolilineWithVehecle,height: context.screenSize().width-50,width: context.screenSize().width-50,)),
+                      alignment: Alignment.center,
+                      child: Image.asset(
+                        Assets.imagesPolilineWithVehecle,
+                        height: context.screenSize().width - 50,
+                        width: context.screenSize().width - 50,
+                      )),
                 ],
               ),
             ),

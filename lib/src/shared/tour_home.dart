@@ -26,10 +26,14 @@ class TourHome extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
-            child: Image.asset(Assets.imagesDubaiImage,height: 118,fit: BoxFit.cover,),
+            child: Image.asset(
+              Assets.imagesDubaiImage,
+              height: 118,
+              fit: BoxFit.cover,
+            ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 10,right: 10,top: 10),
+            padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -45,7 +49,8 @@ class TourHome extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: '150',
-                        style: TextStyling.paragraph.copyWith(color: AppColors.primary),
+                        style: TextStyling.paragraph
+                            .copyWith(color: AppColors.primary),
                       ),
                       TextSpan(
                         text: '/',
@@ -53,7 +58,8 @@ class TourHome extends StatelessWidget {
                       ),
                       TextSpan(
                         text: 'Person',
-                        style: TextStyling.paragraph.copyWith(color: AppColors.secondary),
+                        style: TextStyling.paragraph
+                            .copyWith(color: AppColors.secondary),
                       ),
                     ],
                   ),

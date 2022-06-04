@@ -1,5 +1,4 @@
 import 'package:AlGhaf/src/app/rider_app_view.dart';
-import 'package:AlGhaf/src/app/user_app_view.dart';
 import 'package:AlGhaf/src/configs/app_setup.locator.dart';
 import 'package:AlGhaf/src/services/local/flavor_service.dart';
 import 'package:flutter/cupertino.dart';

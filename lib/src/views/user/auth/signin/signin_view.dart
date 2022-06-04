@@ -30,7 +30,8 @@ class SignInView extends StatelessWidget {
                       children: [
                         Text(
                           "Hi, Welcome back!",
-                          style: TextStyling.h2.copyWith(color: AppColors.primary),
+                          style:
+                              TextStyling.h2.copyWith(color: AppColors.primary),
                         ),
                         Text(
                           "Sign in to your account",
@@ -108,8 +109,10 @@ class SignInView extends StatelessWidget {
                           isPrimary: true,
                           onTap: () {
                             (model.validator(context) == true)
-                            ? NavService.home() : null;
-                          },),
+                                ? NavService.home()
+                                : null;
+                          },
+                        ),
                       ],
                     ),
                     Positioned(

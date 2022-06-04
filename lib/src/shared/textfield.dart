@@ -15,14 +15,14 @@ class CustomInput extends StatefulWidget {
 
   CustomInput(
       {Key? key,
-        this.isPassword,
-        required this.controller,
-        required this.onTap,
-        required this.hint,
-        this.onChanged,
-        this.width,
-        this.errorMessage,
-        this.inputType})
+      this.isPassword,
+      required this.controller,
+      required this.onTap,
+      required this.hint,
+      this.onChanged,
+      this.width,
+      this.errorMessage,
+      this.inputType})
       : super(key: key);
 
   @override
@@ -43,7 +43,7 @@ class _CustomInputState extends State<CustomInput> {
         onTap: () {
           widget.onTap();
         },
-        onChanged: (val){
+        onChanged: (val) {
           widget.onChanged!(val);
         },
         validator: (val) {
@@ -61,33 +61,35 @@ class _CustomInputState extends State<CustomInput> {
           contentPadding: EdgeInsets.fromLTRB(0, 15, 57, 12),
           suffixIcon: (widget.isPassword == true)
               ? InkWell(
-            onTap: () {
-              setState(
-                    () {
-                  widget.isPassword = false;
-                },
-              );
-
-            },
-            child: Icon(
-              Icons.visibility_off_outlined,
-              color: AppColors.secondary,
-              size: 22,
-            ),
-          ) : (widget.isPassword == false) ? InkWell(
-            onTap: () {
-              setState(
-                    () {
-                  widget.isPassword = true;
-                },
-              );
-            },
-            child: Icon(
-              Icons.visibility_outlined,
-              color: AppColors.secondary,
-              size: 22,
-            ),
-          ) : null,
+                  onTap: () {
+                    setState(
+                      () {
+                        widget.isPassword = false;
+                      },
+                    );
+                  },
+                  child: Icon(
+                    Icons.visibility_off_outlined,
+                    color: AppColors.secondary,
+                    size: 22,
+                  ),
+                )
+              : (widget.isPassword == false)
+                  ? InkWell(
+                      onTap: () {
+                        setState(
+                          () {
+                            widget.isPassword = true;
+                          },
+                        );
+                      },
+                      child: Icon(
+                        Icons.visibility_outlined,
+                        color: AppColors.secondary,
+                        size: 22,
+                      ),
+                    )
+                  : null,
         ),
         style: TextStyling.text,
       ),

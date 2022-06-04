@@ -22,11 +22,11 @@ class LoadImage extends StatefulWidget {
 
   LoadImage(this.url,
       {this.isCircle = false,
-        @required this.size,
-        this.pickedImage,
-        this.isUploadLoader = false,
-        this.hasPickOption = false,
-        this.radius = 10});
+      @required this.size,
+      this.pickedImage,
+      this.isUploadLoader = false,
+      this.hasPickOption = false,
+      this.radius = 10});
 
   @override
   _LoadImageState createState() => _LoadImageState();
@@ -111,27 +111,27 @@ class _LoadImageState extends State<LoadImage> {
 
     final pickImageOption = widget.hasPickOption
         ? GestureDetector(
-      onTap: _openOptions,
-      child: Stack(
-        alignment: Alignment.bottomRight,
-        children: [
-          Container(
-            width: 26,
-            height: 26,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: AppColors.primary,
+            onTap: _openOptions,
+            child: Stack(
+              alignment: Alignment.bottomRight,
+              children: [
+                Container(
+                  width: 26,
+                  height: 26,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: AppColors.primary,
+                  ),
+                  child: Icon(
+                    Icons.photo_camera,
+                    color: AppColors.white,
+                    size: 16,
+                  ),
+                ),
+                button,
+              ],
             ),
-            child: Icon(
-              Icons.photo_camera,
-              color: AppColors.white,
-              size: 16,
-            ),
-          ),
-          button,
-        ],
-      ),
-    )
+          )
         : SizedBox();
 
     if (picketImage != null) {
@@ -164,68 +164,68 @@ class _LoadImageState extends State<LoadImage> {
     }
     return (widget.url is String)
         ? CachedNetworkImage(
-      imageUrl: widget.url ?? "http://kkkkkkk.ca",
-      imageBuilder: (context, imageProvider) => Stack(
-        alignment: Alignment.bottomRight,
-        children: [
-          Container(
-            height: widget.size?.height,
-            width: widget.size?.width,
-            decoration: BoxDecoration(
-              borderRadius: widget.isCircle
-                  ? BorderRadius.all(
-                  Radius.circular((widget.size?.width ?? 2) / 2))
-                  : BorderRadius.circular(widget.radius!.toDouble()),
-              image: DecorationImage(
-                image: imageProvider,
-                fit: BoxFit.cover,
+            imageUrl: widget.url ?? "http://kkkkkkk.ca",
+            imageBuilder: (context, imageProvider) => Stack(
+              alignment: Alignment.bottomRight,
+              children: [
+                Container(
+                  height: widget.size?.height,
+                  width: widget.size?.width,
+                  decoration: BoxDecoration(
+                    borderRadius: widget.isCircle
+                        ? BorderRadius.all(
+                            Radius.circular((widget.size?.width ?? 2) / 2))
+                        : BorderRadius.circular(widget.radius!.toDouble()),
+                    image: DecorationImage(
+                      image: imageProvider,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                pickImageOption,
+              ],
+            ),
+            placeholder: (context, url) => Container(
+              width: widget.size?.width,
+              height: widget.size?.height,
+              alignment: Alignment.center,
+              child: CircularProgressIndicator(
+                strokeWidth: 3,
+                valueColor: AlwaysStoppedAnimation<Color>(AppColors.primary),
               ),
             ),
-          ),
-          pickImageOption,
-        ],
-      ),
-      placeholder: (context, url) => Container(
-        width: widget.size?.width,
-        height: widget.size?.height,
-        alignment: Alignment.center,
-        child: CircularProgressIndicator(
-          strokeWidth: 3,
-          valueColor: AlwaysStoppedAnimation<Color>(AppColors.primary),
-        ),
-      ),
-      errorWidget: (context, url, error) => GestureDetector(
-        onTap: _openOptions,
-        child: Center(
-          child: widget.isCircle
-              ? Stack(
-            alignment: Alignment.center,
-            children: [
-              ClipRRect(
-                child: (widget.isUploadLoader == true)
-                    ? fallBackImage
-                    : Image.network(
-                    "https://shop.bestbargain.pk/wp-content/uploads/woocommerce-placeholder-450x450.png"),
-                borderRadius: BorderRadius.all(
-                  Radius.circular((widget.size?.width ?? 2) / 2),
-                ),
+            errorWidget: (context, url, error) => GestureDetector(
+              onTap: _openOptions,
+              child: Center(
+                child: widget.isCircle
+                    ? Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          ClipRRect(
+                            child: (widget.isUploadLoader == true)
+                                ? fallBackImage
+                                : Image.network(
+                                    "https://shop.bestbargain.pk/wp-content/uploads/woocommerce-placeholder-450x450.png"),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular((widget.size?.width ?? 2) / 2),
+                            ),
+                          ),
+                          button,
+                        ],
+                      )
+                    : fallBackImage,
               ),
-              button,
-            ],
+            ),
           )
-              : fallBackImage,
-        ),
-      ),
-    )
         : widget.url is File
-        ? ClipRRect(
-        child: Image.file(widget.url),
-        borderRadius: widget.isCircle
-            ? BorderRadius.all(
-          Radius.circular((widget.size?.width ?? 2) / 2),
-        )
-            : BorderRadius.circular(10))
-        : SizedBox.shrink();
+            ? ClipRRect(
+                child: Image.file(widget.url),
+                borderRadius: widget.isCircle
+                    ? BorderRadius.all(
+                        Radius.circular((widget.size?.width ?? 2) / 2),
+                      )
+                    : BorderRadius.circular(10))
+            : SizedBox.shrink();
   }
 }
 
