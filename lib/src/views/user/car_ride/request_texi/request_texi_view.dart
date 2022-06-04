@@ -1,5 +1,6 @@
 import 'package:AlGhaf/generated/assets.asset.dart';
 import 'package:AlGhaf/src/base/utils/utils.dart';
+import 'package:AlGhaf/src/services/local/navigation_service.dart';
 import 'package:AlGhaf/src/shared/app_screen.dart';
 import 'package:AlGhaf/src/shared/carSelectionWidget.dart';
 import 'package:AlGhaf/src/shared/location_input_field.dart';
@@ -29,7 +30,7 @@ class RequestTexiView extends StatelessWidget {
               ],
               isDraggable: true,
               minHeight: 40,
-              maxHeight: (model.isInitStage) ? 325 : 430,
+              maxHeight: (model.isInitStage) ? 325 : 380,
               backdropEnabled: false,
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(40), topRight: Radius.circular(40)),
@@ -157,9 +158,17 @@ class RequestTexiView extends StatelessWidget {
                               Text("Select Payment",style: TextStyling.h4,),
                             ],
                           ),
-                          PaymentMethodCardTile(title: "Cash Payment", cardNumber: "Defult method", icon: Assets.imagesMoneyVectorBlue, isSelected: false, onTap: (){}),
-                          PaymentMethodCardTile(title: "Master Card", cardNumber: "****    ****    ****   4584", icon: Assets.imagesMasterCardLogo, isSelected: true, onTap: (){}),
-                          MainButton(title: "Done", isPrimary: false, onTap: (){},borderRadius: 12,),
+                          PaymentMethodCardTile(title: "Cash Payment", cardNumber: "Defult method", icon: Assets.imagesMoneyVectorBlue, isSelected: (model.isCashSelected == true) ? true : false, onTap: (){
+                            model.isCashSelected = true;
+                            model.notifyListeners();
+                          }),
+                          PaymentMethodCardTile(title: "Master Card", cardNumber: "****    ****    ****   4584", icon: Assets.imagesMasterCardLogo, isSelected: (model.isCashSelected == false) ? true : false, onTap: (){
+                            model.isCashSelected = false;
+                            model.notifyListeners();
+                          }),
+                          MainButton(title: "Done", isPrimary: false, onTap: (){
+                            NavService.texiSelection();
+                          },borderRadius: 12,),
                         ],
                       ),
                     )

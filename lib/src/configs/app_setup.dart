@@ -8,6 +8,11 @@ import 'package:AlGhaf/src/views/user/auth/forgot_password/forgot_password_view.
 import 'package:AlGhaf/src/views/user/auth/number_verify/number_verify_view.dart';
 import 'package:AlGhaf/src/views/user/auth/register/register_view.dart';
 import 'package:AlGhaf/src/views/user/auth/signin/signin_view.dart';
+import 'package:AlGhaf/src/views/user/car_ride/calling_to_rider/calling_to_rider_view.dart';
+import 'package:AlGhaf/src/views/user/car_ride/request_texi/request_texi_view.dart';
+import 'package:AlGhaf/src/views/user/car_ride/ride_done/ride_done_view.dart';
+import 'package:AlGhaf/src/views/user/car_ride/rider_started/rider_started_view.dart';
+import 'package:AlGhaf/src/views/user/car_ride/texi_selection/texi_selection_view.dart';
 import 'package:AlGhaf/src/views/user/home/home_view.dart';
 import 'package:AlGhaf/src/views/user/splash/splash_view.dart';
 import 'package:stacked/stacked_annotations.dart';
@@ -22,6 +27,11 @@ import 'package:stacked_services/stacked_services.dart';
     MaterialRoute(page: NumberVerifyView),
     MaterialRoute(page: CodeVerifyView),
     MaterialRoute(page: HomeView),
+    MaterialRoute(page: RequestTexiView),
+    MaterialRoute(page: TexiSelectionView),
+    MaterialRoute(page: CallingToRiderView),
+    MaterialRoute(page: RideStartedView),
+    MaterialRoute(page: RideDoneView),
   ],
   dependencies: [
     // Lazy singletons

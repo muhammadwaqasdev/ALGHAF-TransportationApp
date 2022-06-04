@@ -7,16 +7,17 @@ import 'package:AlGhaf/src/shared/rider_contact_card.dart';
 import 'package:AlGhaf/src/shared/spacing.dart';
 import 'package:AlGhaf/src/styles/app_colors.dart';
 import 'package:AlGhaf/src/styles/text_theme.dart';
+import 'package:AlGhaf/src/views/user/car_ride/rider_started/rider_started_view_model.dart';
 import 'package:AlGhaf/src/views/user/car_ride/texi_selection/texi_selection_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:stacked/stacked.dart';
 
-class TexiSelectionView extends StatelessWidget {
+class RideStartedView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<TexiSelectionViewModel>.reactive(
+    return ViewModelBuilder<RideStartedViewModel>.reactive(
       builder: (context, model, child) {
         return AppScreen(
           body: AnimatedContainer(
@@ -28,12 +29,12 @@ class TexiSelectionView extends StatelessWidget {
               ],
               isDraggable: true,
               minHeight: 40,
-              maxHeight: (model.isRiderReady == true) ? 400 : context.screenSize().height - 100,
+              maxHeight: 360,
               backdropEnabled: false,
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(40), topRight: Radius.circular(40)),
               color: AppColors.primary,
-              panelBuilder: (controller) => (model.isRiderReady == true) ? AnimatedContainer(
+              panelBuilder: (controller) => (model.isRideDone == true) ? AnimatedContainer(
                 padding: const EdgeInsets.fromLTRB(32, 20, 32, 20),
                 duration: Duration(seconds: 1),
                 child: Column(
@@ -134,9 +135,8 @@ class TexiSelectionView extends StatelessWidget {
                       ],
                     ),
                     VerticalSpacing(34),
-                    Text("30 Sec",style: TextStyling.h4.copyWith(color: AppColors.red),),
-                    MainButton(title: "Continue", isPrimary: false, onTap: (){
-                      NavService.rideStarted();
+                    MainButton(title: "Ride Done", isPrimary: false, onTap: (){
+                      NavService.rideDone();
                     },borderRadius: 12,),
                   ],
                 ),
@@ -163,25 +163,88 @@ class TexiSelectionView extends StatelessWidget {
                       ),
                     ),
                     VerticalSpacing(20),
-                    SingleChildScrollView(
-                      physics: BouncingScrollPhysics(),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Text("Riders",style: TextStyling.h2.copyWith(color: AppColors.white),),
-                            ],
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(Assets.imagesStartlocation,height: 20,width: 8,),
+                        HorizontalSpacing(5),
+                        Text("Helden st",style: TextStyling.text.copyWith(color: AppColors.white),),
+                        HorizontalSpacing(),
+                        Container(
+                          height: 15,
+                          width: 2,
+                          decoration: BoxDecoration(
+                              color: AppColors.white,
+                              borderRadius: BorderRadius.circular(10)
                           ),
-                          VerticalSpacing(30),
-                          RiderContactCard(),
-                          RiderContactCard(),
-                          RiderContactCard(),
-                          RiderContactCard(),
-
-                        ],
-                      ),
-                    )
+                        ),
+                        HorizontalSpacing(),
+                        Image.asset(Assets.imagesEndLocation,height: 20,width: 16,),
+                        HorizontalSpacing(5),
+                        Text("Chalotte St",style: TextStyling.text.copyWith(color: AppColors.white),),
+                      ],
+                    ),
+                    VerticalSpacing(26),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(100),
+                              child: Image.asset(
+                                Assets.imagesRiderImage,
+                                height: 58,
+                                width: 58,
+                              ),),
+                            HorizontalSpacing(15),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text("Cihan soysakal",style: TextStyling.h4.copyWith(color: AppColors.white),),
+                                VerticalSpacing(),
+                                Text("Toyota (EDF568-354)",style: TextStyling.h4.copyWith(color: AppColors.black),),
+                              ],
+                            )
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Image.asset(Assets.imagesStarVector,height: 17,width: 17,),
+                            Text("4.4",style: TextStyling.h4.copyWith(color: AppColors.white),),
+                          ],
+                        )
+                      ],
+                    ),
+                    VerticalSpacing(34),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text("34 Km",style: TextStyling.h4.copyWith(color: AppColors.white),),
+                        Row(
+                          children: [
+                            Image.asset(Assets.imagesClockVectorWhite,height: 20,width: 20,),
+                            HorizontalSpacing(5),
+                            Text("1h30m",style: TextStyling.h4.copyWith(color: AppColors.white),)
+                          ],
+                        ),
+                      ],
+                    ),
+                    VerticalSpacing(34),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(Assets.imagesMoneyVectorWhite,height: 20,width: 20,),
+                        HorizontalSpacing(5),
+                        Text("\$45.20",style: TextStyling.h4.copyWith(color: AppColors.white),),
+                      ],
+                    ),
+                    VerticalSpacing(34),
+                    MainButton(title: "End Your Ride", isPrimary: false, onTap: (){
+                      model.isRideDone = true;
+                      model.notifyListeners();
+                    },borderRadius: 12,),
                   ],
                 ),
               ),
@@ -189,7 +252,7 @@ class TexiSelectionView extends StatelessWidget {
                 children: [
                   GoogleMap(
                     myLocationButtonEnabled: true,
-                    zoomControlsEnabled: true,
+                    zoomControlsEnabled: false,
                     initialCameraPosition: model.initialCameraPosition,
                     onMapCreated: (controller) =>
                         model.mapController = controller,
@@ -217,14 +280,14 @@ class TexiSelectionView extends StatelessWidget {
                   ),
                   Align(
                     alignment: Alignment.center,
-                      child: Image.asset(Assets.imagesPolilineWithVehecle,height: context.screenSize().width-50,width: context.screenSize().width-50,)),
+                      child: Image.asset(Assets.imagesCarRinnig,height: 50,width: 50,)),
                 ],
               ),
             ),
           ),
         );
       },
-      viewModelBuilder: () => TexiSelectionViewModel(),
+      viewModelBuilder: () => RideStartedViewModel(),
       onModelReady: (model) => model.init(),
     );
   }

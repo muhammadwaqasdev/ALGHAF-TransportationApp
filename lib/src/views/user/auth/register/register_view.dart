@@ -29,11 +29,11 @@ class RegisterView extends StatelessWidget {
                       children: [
                         Text(
                           "Hi, Register yourself",
-                          style: TextStyling.h1.copyWith(color: AppColors.primary),
+                          style: TextStyling.h2.copyWith(color: AppColors.primary),
                         ),
                         Text(
                           "Create an account",
-                          style: TextStyling.h3.copyWith(color: AppColors.grey),
+                          style: TextStyling.h4.copyWith(color: AppColors.grey),
                         ),
                         VerticalSpacing(50),
                         CustomInput(

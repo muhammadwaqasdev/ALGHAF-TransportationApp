@@ -1,5 +1,6 @@
 import 'package:AlGhaf/generated/assets.asset.dart';
 import 'package:AlGhaf/src/base/utils/utils.dart';
+import 'package:AlGhaf/src/services/local/navigation_service.dart';
 import 'package:AlGhaf/src/shared/app_screen.dart';
 import 'package:AlGhaf/src/shared/be_inspired.dart';
 import 'package:AlGhaf/src/shared/main_category.dart';
@@ -20,7 +21,9 @@ class HomeView extends StatelessWidget {
       MainCategory(logo: Assets.imagesPlaneLogo, onTap: () {}, title: "Flight"),
       MainCategory(logo: Assets.imagesHotelLogo, onTap: () {}, title: "Hotel"),
       MainCategory(
-          logo: Assets.imagesCarLogo, onTap: () {}, title: "Car Hires"),
+          logo: Assets.imagesCarLogo, onTap: () {
+            NavService.requestTexi();
+      }, title: "Car Hires"),
       MainCategory(
           logo: Assets.imagesParselLogo, onTap: () {}, title: "Parsel"),
       HorizontalSpacing(),
