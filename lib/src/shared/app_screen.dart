@@ -7,12 +7,14 @@ class AppScreen extends StatelessWidget {
   final Widget body;
   final Widget? bottomNavBar;
   final EdgeInsetsGeometry? padding;
+  final Color? color;
 
   const AppScreen(
       {Key? key,
       this.appbar,
       required this.body,
       this.padding,
+        this.color,
       this.bottomNavBar})
       : super(key: key);
 
@@ -24,7 +26,7 @@ class AppScreen extends StatelessWidget {
           statusBarIconBrightness: Brightness.dark),
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: AppColors.lightGrey,
+        backgroundColor: color ?? AppColors.lightGrey,
         appBar: appbar,
         body: Padding(
           padding: padding ??

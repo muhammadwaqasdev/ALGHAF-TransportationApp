@@ -13,11 +13,13 @@ import 'package:AlGhaf/src/views/user/car_ride/request_texi/request_texi_view.da
 import 'package:AlGhaf/src/views/user/car_ride/ride_done/ride_done_view.dart';
 import 'package:AlGhaf/src/views/user/car_ride/rider_started/rider_started_view.dart';
 import 'package:AlGhaf/src/views/user/car_ride/texi_selection/texi_selection_view.dart';
+import 'package:AlGhaf/src/views/user/delivery_request_history/delivery_request_history_view.dart';
 import 'package:AlGhaf/src/views/user/home/home_view.dart';
 import 'package:AlGhaf/src/views/user/parcel_delivery/bike_rider_started/bike_rider_started_view.dart';
 import 'package:AlGhaf/src/views/user/parcel_delivery/calling_to_bike_rider/calling_to_bike_rider_view.dart';
 import 'package:AlGhaf/src/views/user/parcel_delivery/parcel_delivered/parcel_delivered_view.dart';
 import 'package:AlGhaf/src/views/user/parcel_delivery/request_parcel/request_parcel_view.dart';
+import 'package:AlGhaf/src/views/user/ride_history/ride_history_view.dart';
 import 'package:AlGhaf/src/views/user/splash/splash_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -40,6 +42,8 @@ import 'package:stacked_services/stacked_services.dart';
     MaterialRoute(page: BikeRiderStartedView),
     MaterialRoute(page: CallingToBikeRiderView),
     MaterialRoute(page: ParcelDeliveredView),
+    MaterialRoute(page: DeliveryRequestsAndHistoryView),
+    MaterialRoute(page: RideHistoryView),
   ],
   dependencies: [
     // Lazy singletons

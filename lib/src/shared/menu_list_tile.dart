@@ -1,4 +1,3 @@
-import 'package:AlGhaf/generated/assets.asset.dart';
 import 'package:AlGhaf/src/styles/app_colors.dart';
 import 'package:AlGhaf/src/styles/text_theme.dart';
 import 'package:flutter/material.dart';
@@ -17,12 +16,12 @@ class MenuTile extends StatelessWidget {
           onTap();
         },
         child: Container(
-          padding: EdgeInsets.only(bottom: 15),
+          padding: EdgeInsets.only(bottom: 25),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(title,style: TextStyling.h4.copyWith(color: AppColors.black),),
-              Image.asset(Assets.imagesRightArrowBlack,height: 18,width: 18,)
+              Text(title,style: TextStyling.h4.copyWith(color: AppColors.green),),
+              Icon(Icons.chevron_right,color: AppColors.green,size: 18,),
             ],
           ),
         ),

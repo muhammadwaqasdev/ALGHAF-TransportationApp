@@ -65,10 +65,10 @@ class NavService {
 
   static Future<dynamic>? bikeRiderStarted({dynamic arguments}) =>
       _navigationService!
-          .clearStackAndShow(Routes.bikeRiderStartedView, arguments: arguments);
+          .navigateTo(Routes.bikeRiderStartedView, arguments: arguments);
 
   static Future<dynamic>? callingToBikeRider({dynamic arguments}) =>
-      _navigationService!.clearStackAndShow(Routes.callingToBikeRiderView,
+      _navigationService!.navigateTo(Routes.callingToBikeRiderView,
           arguments: arguments);
 
   static Future<dynamic>? parcelDelivered({dynamic arguments}) =>
@@ -77,5 +77,13 @@ class NavService {
 
   static Future<dynamic>? requestParcel({dynamic arguments}) =>
       _navigationService!
-          .clearStackAndShow(Routes.requestParcelView, arguments: arguments);
+          .navigateTo(Routes.requestParcelView, arguments: arguments);
+
+  static Future<dynamic>? deliveryRequestsAndHistory({dynamic arguments}) =>
+      _navigationService!
+          .navigateTo(Routes.deliveryRequestsAndHistoryView, arguments: arguments);
+
+  static Future<dynamic>? rideHistory({dynamic arguments}) =>
+      _navigationService!
+          .navigateTo(Routes.rideHistoryView, arguments: arguments);
 }
