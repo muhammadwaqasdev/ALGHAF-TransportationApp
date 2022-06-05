@@ -1,7 +1,7 @@
 import 'package:AlGhaf/src/base/utils/constants.dart';
 import 'package:AlGhaf/src/services/local/navigation_service.dart';
 import 'package:AlGhaf/src/views/user/drawer_main/drawer_main_view.dart';
-import 'package:AlGhaf/src/views/user/splash/splash_view.dart';
+import 'package:AlGhaf/src/views/user/flight_booking/flight_searching/flight_searching_view.dart';
 import 'package:flutter/material.dart';
 
 class UserAppView extends StatelessWidget {
@@ -16,7 +16,7 @@ class UserAppView extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
           appBarTheme: AppBarTheme(),
           fontFamily: 'Poppins'),
-      home: SplashView(),
+      home: FlightSearchingView(),
       builder: (context, child) {
         return Navigator(
           onGenerateRoute: (setting) => MaterialPageRoute(

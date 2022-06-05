@@ -25,6 +25,7 @@ class Assets {
   static String get imagesGoogle => "assets/images/google.png";
   static String get imagesHotelLogo => "assets/images/hotelLogo.png";
   static String get imagesHotelPicture => "assets/images/hotelPicture.png";
+  static String get imagesLeftArrowBlack => "assets/images/leftArrowBlack.png";
   static String get imagesLeftArrowWhite => "assets/images/leftArrowWhite.png";
   static String get imagesLinkedIn => "assets/images/linkedIn.png";
   static String get imagesLocationVector => "assets/images/LocationVector.png";
