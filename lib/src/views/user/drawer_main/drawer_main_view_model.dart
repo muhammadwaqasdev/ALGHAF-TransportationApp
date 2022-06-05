@@ -1,3 +1,6 @@
 import 'package:stacked/stacked.dart';
 
-class DrawerMainViewModel extends BaseViewModel {}
+class DrawerMainViewModel extends BaseViewModel {
+
+
+}
