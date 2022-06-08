@@ -20,7 +20,12 @@ import '../views/user/car_ride/ride_done/ride_done_view.dart';
 import '../views/user/car_ride/rider_started/rider_started_view.dart';
 import '../views/user/car_ride/texi_selection/texi_selection_view.dart';
 import '../views/user/delivery_request_history/delivery_request_history_view.dart';
+import '../views/user/flight_booking/flight_searching/flight_searching_view.dart';
+import '../views/user/flight_booking/searched_flight/searched_flight_view.dart';
 import '../views/user/home/home_view.dart';
+import '../views/user/hotel_booking/hotel_searching/hotel_searching_view.dart';
+import '../views/user/hotel_booking/searched_hotel/searched_hotel_view.dart';
+import '../views/user/hotel_booking/see_hotel/see_hotel_view.dart';
 import '../views/user/parcel_delivery/bike_rider_started/bike_rider_started_view.dart';
 import '../views/user/parcel_delivery/calling_to_bike_rider/calling_to_bike_rider_view.dart';
 import '../views/user/parcel_delivery/parcel_delivered/parcel_delivered_view.dart';
@@ -48,6 +53,11 @@ class Routes {
   static const String deliveryRequestsAndHistoryView =
       '/delivery-requests-and-history-view';
   static const String rideHistoryView = '/ride-history-view';
+  static const String flightSearchingView = '/flight-searching-view';
+  static const String searchedFlightView = '/searched-flight-view';
+  static const String hotelSearchingView = '/hotel-searching-view';
+  static const String searchedHotelView = '/searched-hotel-view';
+  static const String seeHotelView = '/see-hotel-view';
   static const all = <String>{
     splashView,
     signInView,
@@ -67,6 +77,11 @@ class Routes {
     parcelDeliveredView,
     deliveryRequestsAndHistoryView,
     rideHistoryView,
+    flightSearchingView,
+    searchedFlightView,
+    hotelSearchingView,
+    searchedHotelView,
+    seeHotelView,
   };
 }
 
@@ -93,7 +108,13 @@ class StackedRouter extends RouterBase {
     RouteDef(Routes.deliveryRequestsAndHistoryView,
         page: DeliveryRequestsAndHistoryView),
     RouteDef(Routes.rideHistoryView, page: RideHistoryView),
+    RouteDef(Routes.flightSearchingView, page: FlightSearchingView),
+    RouteDef(Routes.searchedFlightView, page: SearchedFlightView),
+    RouteDef(Routes.hotelSearchingView, page: HotelSearchingView),
+    RouteDef(Routes.searchedHotelView, page: SearchedHotelView),
+    RouteDef(Routes.seeHotelView, page: SeeHotelView),
   ];
+
   @override
   Map<Type, StackedRouteFactory> get pagesMap => _pagesMap;
   final _pagesMap = <Type, StackedRouteFactory>{
@@ -202,6 +223,36 @@ class StackedRouter extends RouterBase {
     RideHistoryView: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => RideHistoryView(),
+        settings: data,
+      );
+    },
+    FlightSearchingView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => FlightSearchingView(),
+        settings: data,
+      );
+    },
+    SearchedFlightView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => SearchedFlightView(),
+        settings: data,
+      );
+    },
+    HotelSearchingView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => HotelSearchingView(),
+        settings: data,
+      );
+    },
+    SearchedHotelView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => SearchedHotelView(),
+        settings: data,
+      );
+    },
+    SeeHotelView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => SeeHotelView(),
         settings: data,
       );
     },

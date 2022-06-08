@@ -17,35 +17,58 @@ class DeliveryRequestsAndHistoryView extends StatelessWidget {
         return AppScreen(
             color: AppColors.white,
             body: SingleChildScrollView(
-          child: Column(
-            children: [
-              VerticalSpacing(60),
-              Padding(
-                padding: const EdgeInsets.only(left: 20),
-                child: Row(
-                  children: [
-                    Image.asset(
-                      Assets.imagesLeftArrowBlack,
-                      width: 18,
-                      height: 18,
+              child: Column(
+                children: [
+                  VerticalSpacing(60),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: Row(
+                      children: [
+                        Image.asset(
+                          Assets.imagesLeftArrowBlack,
+                          width: 18,
+                          height: 18,
+                        ),
+                        HorizontalSpacing(15),
+                        Text(
+                          "Your Deliveries",
+                          style: TextStyling.h3,
+                        ),
+                      ],
                     ),
-                    HorizontalSpacing(15),
-                    Text("Your Deliveries",style: TextStyling.h3,),
-                  ],
-                ),
+                  ),
+                  VerticalSpacing(40),
+                  DeliveryRequestTileCard(
+                    isRequested: true,
+                  ),
+                  DeliveryRequestTileCard(
+                    isRequested: false,
+                  ),
+                  DeliveryRequestTileCard(
+                    isRequested: true,
+                  ),
+                  DeliveryRequestTileCard(
+                    isRequested: false,
+                  ),
+                  DeliveryRequestTileCard(
+                    isRequested: true,
+                    isDelivered: true,
+                  ),
+                  DeliveryRequestTileCard(
+                    isRequested: true,
+                    isDelivered: true,
+                  ),
+                  DeliveryRequestTileCard(
+                    isRequested: true,
+                    isDelivered: true,
+                  ),
+                  DeliveryRequestTileCard(
+                    isRequested: true,
+                    isDelivered: true,
+                  ),
+                ],
               ),
-              VerticalSpacing(40),
-              DeliveryRequestTileCard(isRequested: true,),
-              DeliveryRequestTileCard(isRequested: false,),
-              DeliveryRequestTileCard(isRequested: true,),
-              DeliveryRequestTileCard(isRequested: false,),
-              DeliveryRequestTileCard(isRequested: true,isDelivered: true,),
-              DeliveryRequestTileCard(isRequested: true,isDelivered: true,),
-              DeliveryRequestTileCard(isRequested: true,isDelivered: true,),
-              DeliveryRequestTileCard(isRequested: true,isDelivered: true,),
-            ],
-          ),
-        ));
+            ));
       },
       viewModelBuilder: () => DeliveryRequestsAndHistoryViewModel(),
     );

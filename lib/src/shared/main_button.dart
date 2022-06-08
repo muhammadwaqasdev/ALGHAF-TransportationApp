@@ -64,14 +64,17 @@ class SmallButton extends StatelessWidget {
       },
       child: Container(
         width: 90,
+        height: 30,
         decoration: BoxDecoration(
           color: isPrimary ? AppColors.primary : AppColors.secondary,
           borderRadius: BorderRadius.circular(10),
         ),
         padding: EdgeInsets.symmetric(vertical: 7, horizontal: 16),
-        child: Text(title,
-            textAlign: TextAlign.center,
-            style: TextStyling.h3.copyWith(color: AppColors.white)),
+        child: FittedBox(
+          child: Text(title,
+              textAlign: TextAlign.center,
+              style: TextStyling.h3.copyWith(color: AppColors.white)),
+        ),
       ),
     );
   }

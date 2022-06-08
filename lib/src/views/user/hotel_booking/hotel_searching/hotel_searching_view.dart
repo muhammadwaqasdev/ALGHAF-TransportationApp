@@ -1,31 +1,32 @@
 import 'package:AlGhaf/generated/assets.asset.dart';
+import 'package:AlGhaf/src/base/utils/utils.dart';
 import 'package:AlGhaf/src/services/local/navigation_service.dart';
 import 'package:AlGhaf/src/shared/app_screen.dart';
-import 'package:AlGhaf/src/shared/flight_type_selection.dart';
+import 'package:AlGhaf/src/shared/hotel_card_tile.dart';
 import 'package:AlGhaf/src/shared/spacing.dart';
 import 'package:AlGhaf/src/shared/text_field_for_booking_search.dart';
 import 'package:AlGhaf/src/styles/app_colors.dart';
 import 'package:AlGhaf/src/styles/text_theme.dart';
-import 'package:AlGhaf/src/views/user/flight_booking/flight_searching/flight_searching_view_model.dart';
+import 'package:AlGhaf/src/views/user/hotel_booking/hotel_searching/hotel_searching_view_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
-class FlightSearchingView extends StatelessWidget {
+class HotelSearchingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<FlightSearchingViewModel>.reactive(
+    return ViewModelBuilder<HotelSearchingViewModel>.reactive(
       builder: (context, model, child) {
         return AppScreen(
             body: SingleChildScrollView(
           child: Column(
             children: [
               Container(
-                height: 630,
+                height: 560,
                 child: Stack(
                   children: [
                     Container(
-                      height: 455,
+                      height: 385,
                       decoration: BoxDecoration(
                           color: AppColors.primary,
                           borderRadius: BorderRadius.only(
@@ -53,35 +54,10 @@ class FlightSearchingView extends StatelessWidget {
                             ),
                             VerticalSpacing(50),
                             Text(
-                              "Book Your Flight",
+                              "Book Your Hotel",
                               style: TextStyling.h1
                                   .copyWith(color: AppColors.white),
                             ),
-                            VerticalSpacing(50),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                FlightTypeSelection(
-                                    title: "One Way",
-                                    onTap: () {
-                                      model.isOneWaySelected = true;
-                                      model.notifyListeners();
-                                    },
-                                    isSelected: (model.isOneWaySelected == true)
-                                        ? true
-                                        : false),
-                                FlightTypeSelection(
-                                    title: "Round Trip",
-                                    onTap: () {
-                                      model.isOneWaySelected = false;
-                                      model.notifyListeners();
-                                    },
-                                    isSelected:
-                                        (model.isOneWaySelected == false)
-                                            ? true
-                                            : false),
-                              ],
-                            )
                           ],
                         ),
                       ),
@@ -107,13 +83,8 @@ class FlightSearchingView extends StatelessWidget {
                                   hint: "Select City",
                                   controller: TextEditingController(),
                                   onTap: () {},
-                                  title: "From",
-                                ),
-                                TextFieldForBooking(
-                                  hint: "Select City",
-                                  controller: TextEditingController(),
-                                  onTap: () {},
-                                  title: "To",
+                                  title: "Going To",
+                                  width: context.screenSize().width - 100,
                                 ),
                               ],
                             ),
@@ -124,13 +95,13 @@ class FlightSearchingView extends StatelessWidget {
                                   hint: "Select Date",
                                   controller: TextEditingController(),
                                   onTap: () {},
-                                  title: "Date",
+                                  title: "Check In",
                                 ),
                                 TextFieldForBooking(
                                   hint: "Select Date",
                                   controller: TextEditingController(),
                                   onTap: () {},
-                                  title: "Return",
+                                  title: "Check Out",
                                 ),
                               ],
                             ),
@@ -138,16 +109,16 @@ class FlightSearchingView extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 TextFieldForBooking(
-                                  hint: "Select Persons",
+                                  hint: "Select Guests",
                                   controller: TextEditingController(),
                                   onTap: () {},
-                                  title: "Passenger",
+                                  title: "Guests",
                                 ),
                                 TextFieldForBooking(
-                                  hint: "Select Class",
+                                  hint: "Select Room",
                                   controller: TextEditingController(),
                                   onTap: () {},
-                                  title: "Class",
+                                  title: "Rooms",
                                 ),
                               ],
                             ),
@@ -162,7 +133,7 @@ class FlightSearchingView extends StatelessWidget {
                       bottom: 0,
                       child: InkWell(
                         onTap: () {
-                          NavService.searchedFlight();
+                          NavService.searchedHotel();
                         },
                         child: Container(
                           height: 60,
@@ -203,66 +174,19 @@ class FlightSearchingView extends StatelessWidget {
                     itemCount: 2,
                     itemBuilder: (context, index) {
                       return InkWell(
-                        onTap: () {
-                          NavService.searchedFlight();
-                        },
-                        child: Container(
-                          height: 80,
-                          decoration: BoxDecoration(
-                            color: AppColors.white,
-                            boxShadow: [AppColors.boxShadow],
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          margin: EdgeInsets.only(bottom: 15),
-                          padding: EdgeInsets.only(left: 20, right: 20),
-                          child: Center(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "Karachi",
-                                      style: TextStyling.h4
-                                          .copyWith(color: AppColors.grey),
-                                    ),
-                                    Text(
-                                      "KHI",
-                                      style: TextStyling.h2,
-                                    ),
-                                  ],
-                                ),
-                                Image.asset(
-                                  Assets.imagesBothSideArrowGrey,
-                                  height: 25,
-                                ),
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "Dubai",
-                                      style: TextStyling.h4
-                                          .copyWith(color: AppColors.grey),
-                                    ),
-                                    Text(
-                                      "DBX",
-                                      style: TextStyling.h2,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      );
+                          onTap: () {
+                            NavService.seeHotel();
+                          },
+                          child: HotelCardTile(
+                            isOpen: true,
+                          ));
                     }),
               )
             ],
           ),
         ));
       },
-      viewModelBuilder: () => FlightSearchingViewModel(),
+      viewModelBuilder: () => HotelSearchingViewModel(),
     );
   }
 }

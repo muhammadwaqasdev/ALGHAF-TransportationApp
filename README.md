@@ -1,4 +1,4 @@
-# Flutter starter app with MVVM stacked architecture and RxDart 
+# Flutter starter app with MVVM stacked architecture and RxDart
 
 ## Setup
 

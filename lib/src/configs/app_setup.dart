@@ -14,7 +14,12 @@ import 'package:AlGhaf/src/views/user/car_ride/ride_done/ride_done_view.dart';
 import 'package:AlGhaf/src/views/user/car_ride/rider_started/rider_started_view.dart';
 import 'package:AlGhaf/src/views/user/car_ride/texi_selection/texi_selection_view.dart';
 import 'package:AlGhaf/src/views/user/delivery_request_history/delivery_request_history_view.dart';
+import 'package:AlGhaf/src/views/user/flight_booking/flight_searching/flight_searching_view.dart';
+import 'package:AlGhaf/src/views/user/flight_booking/searched_flight/searched_flight_view.dart';
 import 'package:AlGhaf/src/views/user/home/home_view.dart';
+import 'package:AlGhaf/src/views/user/hotel_booking/hotel_searching/hotel_searching_view.dart';
+import 'package:AlGhaf/src/views/user/hotel_booking/searched_hotel/searched_hotel_view.dart';
+import 'package:AlGhaf/src/views/user/hotel_booking/see_hotel/see_hotel_view.dart';
 import 'package:AlGhaf/src/views/user/parcel_delivery/bike_rider_started/bike_rider_started_view.dart';
 import 'package:AlGhaf/src/views/user/parcel_delivery/calling_to_bike_rider/calling_to_bike_rider_view.dart';
 import 'package:AlGhaf/src/views/user/parcel_delivery/parcel_delivered/parcel_delivered_view.dart';
@@ -44,6 +49,11 @@ import 'package:stacked_services/stacked_services.dart';
     MaterialRoute(page: ParcelDeliveredView),
     MaterialRoute(page: DeliveryRequestsAndHistoryView),
     MaterialRoute(page: RideHistoryView),
+    MaterialRoute(page: FlightSearchingView),
+    MaterialRoute(page: SearchedFlightView),
+    MaterialRoute(page: HotelSearchingView),
+    MaterialRoute(page: SearchedHotelView),
+    MaterialRoute(page: SeeHotelView),
   ],
   dependencies: [
     // Lazy singletons

@@ -68,8 +68,8 @@ class NavService {
           .navigateTo(Routes.bikeRiderStartedView, arguments: arguments);
 
   static Future<dynamic>? callingToBikeRider({dynamic arguments}) =>
-      _navigationService!.navigateTo(Routes.callingToBikeRiderView,
-          arguments: arguments);
+      _navigationService!
+          .navigateTo(Routes.callingToBikeRiderView, arguments: arguments);
 
   static Future<dynamic>? parcelDelivered({dynamic arguments}) =>
       _navigationService!
@@ -80,10 +80,29 @@ class NavService {
           .navigateTo(Routes.requestParcelView, arguments: arguments);
 
   static Future<dynamic>? deliveryRequestsAndHistory({dynamic arguments}) =>
-      _navigationService!
-          .navigateTo(Routes.deliveryRequestsAndHistoryView, arguments: arguments);
+      _navigationService!.navigateTo(Routes.deliveryRequestsAndHistoryView,
+          arguments: arguments);
 
   static Future<dynamic>? rideHistory({dynamic arguments}) =>
       _navigationService!
           .navigateTo(Routes.rideHistoryView, arguments: arguments);
+
+  static Future<dynamic>? flightSearching({dynamic arguments}) =>
+      _navigationService!
+          .navigateTo(Routes.flightSearchingView, arguments: arguments);
+
+  static Future<dynamic>? searchedFlight({dynamic arguments}) =>
+      _navigationService!
+          .navigateTo(Routes.searchedFlightView, arguments: arguments);
+
+  static Future<dynamic>? hotelSearching({dynamic arguments}) =>
+      _navigationService!
+          .navigateTo(Routes.hotelSearchingView, arguments: arguments);
+
+  static Future<dynamic>? searchedHotel({dynamic arguments}) =>
+      _navigationService!
+          .navigateTo(Routes.searchedHotelView, arguments: arguments);
+
+  static Future<dynamic>? seeHotel({dynamic arguments}) =>
+      _navigationService!.navigateTo(Routes.seeHotelView, arguments: arguments);
 }

@@ -1,5 +1,5 @@
 import 'package:stacked/stacked.dart';
 
-class FlightSearchingViewModel extends BaseViewModel {
+class HotelSearchingViewModel extends BaseViewModel {
   bool isOneWaySelected = true;
 }

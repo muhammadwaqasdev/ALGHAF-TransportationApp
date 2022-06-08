@@ -14,7 +14,7 @@ class AppScreen extends StatelessWidget {
       this.appbar,
       required this.body,
       this.padding,
-        this.color,
+      this.color,
       this.bottomNavBar})
       : super(key: key);
 

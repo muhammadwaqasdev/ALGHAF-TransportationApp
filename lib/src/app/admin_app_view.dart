@@ -7,7 +7,7 @@ class AdminAppView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: Constants.appTitle,
+      title: Constants.adminAppTitle,
       debugShowCheckedModeBanner: false,
       onGenerateRoute: NavService.onGenerateRoute,
       navigatorKey: NavService.key,

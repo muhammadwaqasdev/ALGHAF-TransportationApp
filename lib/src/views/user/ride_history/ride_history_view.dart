@@ -17,37 +17,40 @@ class RideHistoryView extends StatelessWidget {
         return AppScreen(
             color: AppColors.white,
             body: SingleChildScrollView(
-          child: Column(
-            children: [
-              VerticalSpacing(60),
-              Padding(
-                padding: const EdgeInsets.only(left: 20),
-                child: Row(
-                  children: [
-                    Image.asset(
-                      Assets.imagesLeftArrowBlack,
-                      width: 18,
-                      height: 18,
+              child: Column(
+                children: [
+                  VerticalSpacing(60),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: Row(
+                      children: [
+                        Image.asset(
+                          Assets.imagesLeftArrowBlack,
+                          width: 18,
+                          height: 18,
+                        ),
+                        HorizontalSpacing(15),
+                        Text(
+                          "Your Rides Histories",
+                          style: TextStyling.h3,
+                        ),
+                      ],
                     ),
-                    HorizontalSpacing(15),
-                    Text("Your Rides Histories",style: TextStyling.h3,),
-                  ],
-                ),
+                  ),
+                  VerticalSpacing(40),
+                  RideTileCard(),
+                  RideTileCard(),
+                  RideTileCard(),
+                  RideTileCard(),
+                  RideTileCard(),
+                  RideTileCard(),
+                  RideTileCard(),
+                  RideTileCard(),
+                  RideTileCard(),
+                  RideTileCard(),
+                ],
               ),
-              VerticalSpacing(40),
-              RideTileCard(),
-              RideTileCard(),
-              RideTileCard(),
-              RideTileCard(),
-              RideTileCard(),
-              RideTileCard(),
-              RideTileCard(),
-              RideTileCard(),
-              RideTileCard(),
-              RideTileCard(),
-            ],
-          ),
-        ));
+            ));
       },
       viewModelBuilder: () => RideHistoryViewModel(),
     );

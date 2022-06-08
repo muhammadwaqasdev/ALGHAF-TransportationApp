@@ -4,9 +4,7 @@ import 'package:AlGhaf/src/styles/app_colors.dart';
 import 'package:AlGhaf/src/styles/text_theme.dart';
 import 'package:flutter/material.dart';
 
-
 class RideTileCard extends StatelessWidget {
-
   const RideTileCard({Key? key}) : super(key: key);
 
   @override
@@ -17,9 +15,8 @@ class RideTileCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             AppColors.boxShadow,
-          ]
-      ),
-      margin: EdgeInsets.only(bottom: 25,left: 20,right: 20),
+          ]),
+      margin: EdgeInsets.only(bottom: 25, left: 20, right: 20),
       padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
       child: Column(
         children: [
@@ -37,8 +34,7 @@ class RideTileCard extends StatelessWidget {
                   HorizontalSpacing(5),
                   Text(
                     "Helden st",
-                    style: TextStyling.text
-                        .copyWith(color: AppColors.primary),
+                    style: TextStyling.text.copyWith(color: AppColors.primary),
                   ),
                   HorizontalSpacing(20),
                   Image.asset(
@@ -49,15 +45,20 @@ class RideTileCard extends StatelessWidget {
                   HorizontalSpacing(5),
                   Text(
                     "Chalotte St",
-                    style: TextStyling.text
-                        .copyWith(color: AppColors.primary),
+                    style: TextStyling.text.copyWith(color: AppColors.primary),
                   ),
                 ],
               ),
-              Text("AED 35",style: TextStyling.text.copyWith(color: AppColors.green),)
+              Text(
+                "AED 35",
+                style: TextStyling.text.copyWith(color: AppColors.green),
+              )
             ],
           ),
-          Divider(color: AppColors.primary,thickness: 2,),
+          Divider(
+            color: AppColors.primary,
+            thickness: 2,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -73,20 +74,17 @@ class RideTileCard extends StatelessWidget {
                   ),
                   HorizontalSpacing(15),
                   Column(
-                    crossAxisAlignment:
-                    CrossAxisAlignment.start,
-                    mainAxisAlignment:
-                    MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         "Cihan soysakal",
-                        style: TextStyling.h4
-                            .copyWith(color: AppColors.primary),
+                        style:
+                            TextStyling.h4.copyWith(color: AppColors.primary),
                       ),
                       Text(
                         "Toyota (EDF568-354)",
-                        style: TextStyling.h4
-                            .copyWith(color: AppColors.black),
+                        style: TextStyling.h4.copyWith(color: AppColors.black),
                       ),
                     ],
                   )

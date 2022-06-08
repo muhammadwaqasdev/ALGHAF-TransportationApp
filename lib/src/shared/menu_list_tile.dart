@@ -6,25 +6,32 @@ class MenuTile extends StatelessWidget {
   final String title;
   final Function onTap;
 
-  const MenuTile({Key? key, required this.title, required this.onTap}) : super(key: key);
-
+  const MenuTile({Key? key, required this.title, required this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-        onTap: (){
-          onTap();
-        },
-        child: Container(
-          padding: EdgeInsets.only(bottom: 25),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(title,style: TextStyling.h4.copyWith(color: AppColors.green),),
-              Icon(Icons.chevron_right,color: AppColors.green,size: 18,),
-            ],
-          ),
+      onTap: () {
+        onTap();
+      },
+      child: Container(
+        padding: EdgeInsets.only(bottom: 25),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              title,
+              style: TextStyling.h4.copyWith(color: AppColors.green),
+            ),
+            Icon(
+              Icons.chevron_right,
+              color: AppColors.green,
+              size: 18,
+            ),
+          ],
         ),
-      );
+      ),
+    );
   }
 }
