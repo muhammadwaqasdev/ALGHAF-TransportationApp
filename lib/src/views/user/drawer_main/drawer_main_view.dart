@@ -91,12 +91,15 @@ class DrawerMainView extends StatelessWidget {
                           NavService.home();
                         }),
                     MenuTile(
-                        title: "Delivery Requests / History", onTap: () {
+                        title: "Delivery Requests / History",
+                        onTap: () {
                           NavService.deliveryRequestsAndHistory();
-                    }),
-                    MenuTile(title: "Ride History", onTap: () {
-                      NavService.rideHistory();
-                    }),
+                        }),
+                    MenuTile(
+                        title: "Ride History",
+                        onTap: () {
+                          NavService.rideHistory();
+                        }),
                     MenuTile(title: "Booking History", onTap: () {}),
                     MenuTile(title: "Wallet", onTap: () {}),
                     MenuTile(title: "Account", onTap: () {}),

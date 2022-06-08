@@ -18,8 +18,18 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Widget> cat = [
       HorizontalSpacing(),
-      MainCategory(logo: Assets.imagesPlaneLogo, onTap: () {}, title: "Flight"),
-      MainCategory(logo: Assets.imagesHotelLogo, onTap: () {}, title: "Hotel"),
+      MainCategory(
+          logo: Assets.imagesPlaneLogo,
+          onTap: () {
+            NavService.flightSearching();
+          },
+          title: "Flight"),
+      MainCategory(
+          logo: Assets.imagesHotelLogo,
+          onTap: () {
+            NavService.hotelSearching();
+          },
+          title: "Hotel"),
       MainCategory(
           logo: Assets.imagesCarLogo,
           onTap: () {
@@ -27,7 +37,11 @@ class HomeView extends StatelessWidget {
           },
           title: "Car Hires"),
       MainCategory(
-          logo: Assets.imagesParselLogo, onTap: () {}, title: "Parsel"),
+          logo: Assets.imagesParselLogo,
+          onTap: () {
+            NavService.requestParcel();
+          },
+          title: "Parsel"),
       HorizontalSpacing(),
     ];
     return ViewModelBuilder<HomeViewModel>.reactive(

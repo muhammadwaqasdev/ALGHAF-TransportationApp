@@ -14,7 +14,18 @@ class TextFieldForBooking extends StatefulWidget {
   final String? errorMessage;
   final bool isVisible;
 
-  const TextFieldForBooking({Key? key, required this.hint,this.isVisible =true, required this.title, required this.controller, this.width, required this.onTap, this.inputType, this.onChanged, this.errorMessage}) : super(key: key);
+  const TextFieldForBooking(
+      {Key? key,
+      required this.hint,
+      this.isVisible = true,
+      required this.title,
+      required this.controller,
+      this.width,
+      required this.onTap,
+      this.inputType,
+      this.onChanged,
+      this.errorMessage})
+      : super(key: key);
 
   @override
   State<TextFieldForBooking> createState() => _TextFieldForBookingState();
@@ -30,7 +41,10 @@ class _TextFieldForBookingState extends State<TextFieldForBooking> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(widget.title,style: TextStyling.h4.copyWith(color: AppColors.grey),),
+            Text(
+              widget.title,
+              style: TextStyling.h4.copyWith(color: AppColors.grey),
+            ),
             TextFormField(
               onTap: () {
                 widget.onTap();

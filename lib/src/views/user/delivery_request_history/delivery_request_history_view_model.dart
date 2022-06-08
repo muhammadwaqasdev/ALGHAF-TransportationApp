@@ -1,6 +1,3 @@
 import 'package:stacked/stacked.dart';
 
-class DeliveryRequestsAndHistoryViewModel extends BaseViewModel {
-
-
-}
+class DeliveryRequestsAndHistoryViewModel extends BaseViewModel {}
