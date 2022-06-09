@@ -1,3 +1,4 @@
+import 'package:AlGhaf/src/base/utils/constants.dart';
 import 'package:package_info/package_info.dart';
 
 enum Env {
@@ -31,6 +32,16 @@ class FlavorService {
           env = Env.admin_prod;
         }
         break;
+    }
+  }
+
+  static String getAppName(){
+    if(Env.admin_prod == env){
+      return Constants.adminAppTitle;
+    }else if(Env.rider_prod == env){
+      return Constants.riderAppTitle;
+    }else {
+      return Constants.userAppTitle;
     }
   }
 

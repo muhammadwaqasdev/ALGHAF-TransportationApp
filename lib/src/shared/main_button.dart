@@ -79,3 +79,41 @@ class SmallButton extends StatelessWidget {
     );
   }
 }
+
+class CustomButton extends StatefulWidget {
+  final String title;
+  final Function onTap;
+  final bool isSelected;
+
+  const CustomButton(
+      {Key? key,
+      required this.title,
+      required this.onTap,
+      required this.isSelected})
+      : super(key: key);
+
+  @override
+  State<CustomButton> createState() => _CustomButtonState();
+}
+
+class _CustomButtonState extends State<CustomButton> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 24,
+      padding: EdgeInsets.fromLTRB(3, 3, 3, 3),
+      width: context.screenSize().width / 6,
+      decoration: BoxDecoration(
+        color: (widget.isSelected) ? AppColors.white : AppColors.grey,
+        borderRadius: BorderRadius.circular(5),
+      ),
+      child: FittedBox(
+          child: Text(
+        widget.title,
+        textAlign: TextAlign.center,
+        style: TextStyling.h4.copyWith(
+            color: (widget.isSelected) ? AppColors.green : AppColors.primary),
+      )),
+    );
+  }
+}
