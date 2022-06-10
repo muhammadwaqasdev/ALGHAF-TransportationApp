@@ -6,16 +6,15 @@ import 'package:AlGhaf/src/shared/rider/rider_ride_tile.dart';
 import 'package:AlGhaf/src/shared/spacing.dart';
 import 'package:AlGhaf/src/styles/app_colors.dart';
 import 'package:AlGhaf/src/styles/text_theme.dart';
-import 'package:AlGhaf/src/views/rider/bike_rider/bike_rider_home/bike_rider_home_view_model.dart';
-import 'package:AlGhaf/src/views/user/flight_booking/searched_flight/searched_flight_view_model.dart';
+import 'package:AlGhaf/src/views/rider/car_rider/car_rider_home/car_rider_home_view_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
-class BikeRiderHomeView extends StatelessWidget {
+class CarRiderHomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<BikeRiderHomeViewModel>.reactive(
+    return ViewModelBuilder<CarRiderHomeViewModel>.reactive(
       builder: (context, model, child) {
         return AppScreen(
             body: SingleChildScrollView(
@@ -35,16 +34,15 @@ class BikeRiderHomeView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           InkWell(
                             onTap: () {
-                              Navigator.pop(context);
                             },
                             child: Image.asset(
-                              Assets.imagesBackArrowBigWhite,
-                              height: 18,
-                              width: 28,
+                              Assets.imagesRiderUserAvatar,
+                              height: 38,
+                              width: 38,
                             ),
                           ),
                         ],
@@ -117,7 +115,7 @@ class BikeRiderHomeView extends StatelessWidget {
           ),
         ));
       },
-      viewModelBuilder: () => BikeRiderHomeViewModel(),
+      viewModelBuilder: () => CarRiderHomeViewModel(),
     );
   }
 }

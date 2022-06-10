@@ -48,11 +48,13 @@ class SmallButton extends StatelessWidget {
   final String title;
   final Function onTap;
   final bool isPrimary;
+  final Color? color;
 
   const SmallButton(
       {Key? key,
       required this.title,
       required this.onTap,
+        this.color,
       required this.isPrimary})
       : super(key: key);
 
@@ -63,17 +65,16 @@ class SmallButton extends StatelessWidget {
         onTap();
       },
       child: Container(
-        width: 90,
         height: 30,
         decoration: BoxDecoration(
-          color: isPrimary ? AppColors.primary : AppColors.secondary,
+          color: (color == null) ? isPrimary ? AppColors.primary : AppColors.secondary : color,
           borderRadius: BorderRadius.circular(10),
         ),
         padding: EdgeInsets.symmetric(vertical: 7, horizontal: 16),
         child: FittedBox(
           child: Text(title,
               textAlign: TextAlign.center,
-              style: TextStyling.h3.copyWith(color: AppColors.white)),
+              style: TextStyling.h4.copyWith(color: AppColors.white)),
         ),
       ),
     );

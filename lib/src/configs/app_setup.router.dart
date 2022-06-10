@@ -8,6 +8,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked/stacked_annotations.dart';
 
 import '../views/user/auth/code_verify/code_verify_view.dart';
 import '../views/user/auth/forgot_password/forgot_password_view.dart';
@@ -114,7 +115,6 @@ class StackedRouter extends RouterBase {
     RouteDef(Routes.searchedHotelView, page: SearchedHotelView),
     RouteDef(Routes.seeHotelView, page: SeeHotelView),
   ];
-
   @override
   Map<Type, StackedRouteFactory> get pagesMap => _pagesMap;
   final _pagesMap = <Type, StackedRouteFactory>{
