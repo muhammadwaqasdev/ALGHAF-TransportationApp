@@ -49,12 +49,14 @@ class SmallButton extends StatelessWidget {
   final Function onTap;
   final bool isPrimary;
   final Color? color;
+  final Color? textColor;
 
   const SmallButton(
       {Key? key,
       required this.title,
       required this.onTap,
         this.color,
+        this.textColor,
       required this.isPrimary})
       : super(key: key);
 
@@ -74,7 +76,7 @@ class SmallButton extends StatelessWidget {
         child: FittedBox(
           child: Text(title,
               textAlign: TextAlign.center,
-              style: TextStyling.h4.copyWith(color: AppColors.white)),
+              style: TextStyling.h4.copyWith(color: textColor ?? AppColors.white)),
         ),
       ),
     );

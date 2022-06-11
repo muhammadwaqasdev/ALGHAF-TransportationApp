@@ -88,13 +88,27 @@ class RiderDrawerMainView extends StatelessWidget {
                 padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
                 child: Column(
                   children: [
-                    MenuTile(title: "Home", onTap: () {}),
-                    MenuTile(title: "Ride", onTap: () {}),
-                    MenuTile(title: "Account", onTap: () {}),
-                    MenuTile(title: "Wallet", onTap: () {}),
-                    MenuTile(title: "History", onTap: () {}),
-                    MenuTile(title: "Notification", onTap: () {}),
-                    MenuTile(title: "Logout", onTap: () {}),
+                    MenuTile(title: "Home", onTap: () {
+                      NavService.carRiderHome();
+                    }),
+                    MenuTile(title: "Ride", onTap: () {
+                      NavService.searchingRide();
+                    }),
+                    MenuTile(title: "Account", onTap: () {
+                      NavService.riderAccount();
+                    }),
+                    MenuTile(title: "Wallet", onTap: () {
+                      NavService.riderWallet();
+                    }),
+                    MenuTile(title: "History", onTap: () {
+                      NavService.riderHistory();
+                    }),
+                    MenuTile(title: "Notification", onTap: () {
+                      NavService.riderHistory();
+                    }),
+                    MenuTile(title: "Logout", onTap: () {
+                      NavService.riderSignIn();
+                    }),
                   ],
                 ),
               )

@@ -3,6 +3,16 @@ import 'package:AlGhaf/src/services/local/connectivity_service.dart';
 import 'package:AlGhaf/src/services/local/keyboard_service.dart';
 import 'package:AlGhaf/src/services/local/main_drawer_service.dart';
 import 'package:AlGhaf/src/services/remote/api_service.dart';
+import 'package:AlGhaf/src/views/rider/car_rider/car_rider_home/car_rider_home_view.dart';
+import 'package:AlGhaf/src/views/rider/car_rider/done_car_ride/done_car_ride_view.dart';
+import 'package:AlGhaf/src/views/rider/car_rider/searching_ride/searching_ride_view.dart';
+import 'package:AlGhaf/src/views/rider/car_rider/start_car_ride/start_car_ride_view.dart';
+import 'package:AlGhaf/src/views/rider/rider_account/rider_account_view.dart';
+import 'package:AlGhaf/src/views/rider/rider_forgot_password/rider_forgot_password_view.dart';
+import 'package:AlGhaf/src/views/rider/rider_history/rider_history_view.dart';
+import 'package:AlGhaf/src/views/rider/rider_signin/rider_signin_view.dart';
+import 'package:AlGhaf/src/views/rider/rider_splash/rider_splash_view.dart';
+import 'package:AlGhaf/src/views/rider/rider_wallet/rider_wallet_view.dart';
 import 'package:AlGhaf/src/views/user/auth/code_verify/code_verify_view.dart';
 import 'package:AlGhaf/src/views/user/auth/forgot_password/forgot_password_view.dart';
 import 'package:AlGhaf/src/views/user/auth/number_verify/number_verify_view.dart';
@@ -54,6 +64,16 @@ import 'package:stacked_services/stacked_services.dart';
     MaterialRoute(page: HotelSearchingView),
     MaterialRoute(page: SearchedHotelView),
     MaterialRoute(page: SeeHotelView),
+    MaterialRoute(page: RiderSplashView),
+    MaterialRoute(page: RiderSignInView),
+    MaterialRoute(page: RiderForgotPasswordView),
+    MaterialRoute(page: CarRiderHomeView),
+    MaterialRoute(page: SearchingRideView),
+    MaterialRoute(page: StartCarRideView),
+    MaterialRoute(page: DoneCarRideView),
+    MaterialRoute(page: RiderAccountView),
+    MaterialRoute(page: RiderHistoryView),
+    MaterialRoute(page: RiderWalletView),
   ],
   dependencies: [
     // Lazy singletons

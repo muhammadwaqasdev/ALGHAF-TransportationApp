@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:AlGhaf/generated/assets.asset.dart';
 import 'package:AlGhaf/src/styles/app_colors.dart';
 import 'package:AlGhaf/src/styles/text_theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -116,17 +117,13 @@ class _LoadImageState extends State<LoadImage> {
               alignment: Alignment.bottomRight,
               children: [
                 Container(
-                  width: 26,
-                  height: 26,
+                  width: 40,
+                  height: 40,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: AppColors.primary,
+                    color: AppColors.secondary,
                   ),
-                  child: Icon(
-                    Icons.photo_camera,
-                    color: AppColors.white,
-                    size: 16,
-                  ),
+                  child: Center(child: Image.asset(Assets.imagesPencil,width: 20,height: 20,)),
                 ),
                 button,
               ],
@@ -172,6 +169,7 @@ class _LoadImageState extends State<LoadImage> {
                   height: widget.size?.height,
                   width: widget.size?.width,
                   decoration: BoxDecoration(
+                    border: Border.all(color: AppColors.white,width: 3),
                     borderRadius: widget.isCircle
                         ? BorderRadius.all(
                             Radius.circular((widget.size?.width ?? 2) / 2))

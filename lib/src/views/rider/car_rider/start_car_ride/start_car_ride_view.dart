@@ -141,7 +141,9 @@ class StartCarRideView extends StatelessWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                SmallButton(title: "Reject", onTap: (){}, isPrimary: false,color: AppColors.red,),
+                                SmallButton(title: "Reject", onTap: (){
+                                  NavService.searchingRide();
+                                }, isPrimary: false,color: AppColors.red,),
                                 Image.asset(Assets.imagesTimer,height: 40,width: 40,),
                                 SmallButton(title: "Accept", onTap: (){
                                   model.isRideOnRequest = false;
@@ -270,7 +272,7 @@ class StartCarRideView extends StatelessWidget {
                                 ],
                               ),
                               SmallButton(title: "Cancel", onTap: () async {
-
+                                NavService.searchingRide();
                               }, isPrimary: false,color: AppColors.red,),
                             ],
                           ),
@@ -623,7 +625,7 @@ class StartCarRideView extends StatelessWidget {
                                                           model.isRiderRiding = false;
                                                           model.isRiderArrivedToDestination = false;
                                                           model.isRideOnRequest = false;
-                                                          //NavService
+                                                          NavService.doneCarRide();
                                                           model.notifyListeners();
                                                         }),
                                                       ],

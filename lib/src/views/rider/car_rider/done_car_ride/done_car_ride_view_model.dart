@@ -14,6 +14,11 @@ class DoneCarRideViewModel extends ReactiveViewModel with ApiViewModel {
   bool isRemainPayment = false;
   bool isFinished = false;
 
+  endRide() async{
+    await Future.delayed(Duration(seconds: 10));
+    NavService.searchingRide();
+  }
+
 
   //For GOOGLE MAP
   TextEditingController originLocation = TextEditingController();

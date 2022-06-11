@@ -58,12 +58,13 @@ jobs:
         run: flutter pub get
 
       - name: Build APPBUNDLE
-        run: flutter build appbundle --release --flavor user_prod -t lib/main_user.dart && flutter build apk --release --flavor user_prod -t lib/main_user.dart
+        run:  flutter build apk --release --flavor user_prod -t lib/main_user.dart
 
+#  flutter build appbundle --release --flavor user_prod -t lib/main_user.dart &&
       - name: Create Github Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "build/app/outputs/bundle/user-prod_Release/*.aab,build/app/outputs/flutter-apk/app-user-prod-release.apk"
+          artifacts: "build/app/outputs/bundle/user_prod_Release/*.aab,build/app/outputs/flutter-apk/app-user_prod-release.apk"
           token: ${{ secrets.GH_TOKEN }}
           tag: "${{env.RELEASE_TAG}}"
           body: "${{ github.event.head_commit.message }}"
@@ -72,14 +73,14 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: APPBUNDLE
-          path: build/app/outputs/bundle/user-prod-Release/app-user-prod-release.aab
+          path: build/app/outputs/bundle/user-prod-Release/app-user_prod-release.aab
 
 
       - name: Save APK to Artifacts
         uses: actions/upload-artifact@v2
         with:
           name: APK
-          path: build/app/outputs/flutter-apk/app-user-prod-release.apk
+          path: build/app/outputs/flutter-apk/app-user_prod-release.apk
 
 
       - name: whatsapp-notify

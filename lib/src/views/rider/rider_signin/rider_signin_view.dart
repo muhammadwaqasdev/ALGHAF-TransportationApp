@@ -1,4 +1,3 @@
-import 'package:AlGhaf/generated/assets.asset.dart';
 import 'package:AlGhaf/src/base/utils/utils.dart';
 import 'package:AlGhaf/src/services/local/navigation_service.dart';
 import 'package:AlGhaf/src/shared/app_screen.dart';
@@ -8,7 +7,6 @@ import 'package:AlGhaf/src/shared/textfield.dart';
 import 'package:AlGhaf/src/styles/app_colors.dart';
 import 'package:AlGhaf/src/styles/text_theme.dart';
 import 'package:AlGhaf/src/views/rider/rider_signin/rider_signin_view_model.dart';
-import 'package:AlGhaf/src/views/user/auth/signin/signin_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -64,7 +62,7 @@ class RiderSignInView extends StatelessWidget {
                       children: [
                         TextButton(
                           onPressed: () {
-                            //NavService.forgotPassword();
+                            NavService.riderForgotPassword();
                           },
                           child: Text(
                             "Forgot Password?",

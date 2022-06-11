@@ -6,7 +6,6 @@ import 'package:AlGhaf/src/shared/textfield.dart';
 import 'package:AlGhaf/src/styles/app_colors.dart';
 import 'package:AlGhaf/src/styles/text_theme.dart';
 import 'package:AlGhaf/src/views/rider/rider_forgot_password/rider_forgot_password_view_model.dart';
-import 'package:AlGhaf/src/views/user/auth/forgot_password/forgot_password_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:stacked/stacked.dart';
@@ -69,7 +68,7 @@ class RiderForgotPasswordView extends StatelessWidget {
                       isPrimary: true,
                       onTap: () {
                         (model.validator(context1) == true)
-                            ? NavService.signIn()
+                            ? NavService.riderSignIn()
                             : null;
 
                         Fluttertoast.showToast(

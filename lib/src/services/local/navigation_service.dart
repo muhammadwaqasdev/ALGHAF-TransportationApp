@@ -105,4 +105,41 @@ class NavService {
 
   static Future<dynamic>? seeHotel({dynamic arguments}) =>
       _navigationService!.navigateTo(Routes.seeHotelView, arguments: arguments);
+
+  static Future<dynamic>? riderSplash({dynamic arguments}) => _navigationService!
+      .clearStackAndShow(Routes.riderSplashView, arguments: arguments);
+
+  static Future<dynamic>? riderSignIn({dynamic arguments}) => _navigationService!
+      .clearStackAndShow(Routes.riderSignInView, arguments: arguments);
+
+  static Future<dynamic>? riderForgotPassword({dynamic arguments}) =>
+      _navigationService!
+          .navigateTo(Routes.riderForgotPasswordView, arguments: arguments);
+
+  static Future<dynamic>? carRiderHome({dynamic arguments}) => _navigationService!
+      .clearStackAndShow(Routes.carRiderHomeView, arguments: arguments);
+
+  static Future<dynamic>? searchingRide({dynamic arguments}) =>
+      _navigationService!
+          .navigateTo(Routes.searchingRideView, arguments: arguments);
+
+  static Future<dynamic>? startCarRide({dynamic arguments}) =>
+      _navigationService!
+          .navigateTo(Routes.startCarRideView, arguments: arguments);
+
+  static Future<dynamic>? doneCarRide({dynamic arguments}) =>
+      _navigationService!
+          .navigateTo(Routes.doneCarRideView, arguments: arguments);
+
+  static Future<dynamic>? riderAccount({dynamic arguments}) =>
+      _navigationService!
+          .navigateTo(Routes.riderAccountView, arguments: arguments);
+
+  static Future<dynamic>? riderHistory({dynamic arguments}) =>
+      _navigationService!
+          .navigateTo(Routes.riderHistoryView, arguments: arguments);
+
+  static Future<dynamic>? riderWallet({dynamic arguments}) =>
+      _navigationService!
+          .navigateTo(Routes.riderWalletView, arguments: arguments);
 }

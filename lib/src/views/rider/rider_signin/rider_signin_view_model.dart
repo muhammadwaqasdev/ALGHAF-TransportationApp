@@ -1,3 +1,4 @@
+import 'package:AlGhaf/src/services/local/navigation_service.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -16,10 +17,10 @@ class RiderSignInViewModel extends BaseViewModel {
   }
 
   signIn(){
-    if(password.text == "bike"){
-
+    if(password.text == "car"){
+      NavService.carRiderHome();
     }else {
-
+      NavService.carRiderHome();
     }
   }
 }

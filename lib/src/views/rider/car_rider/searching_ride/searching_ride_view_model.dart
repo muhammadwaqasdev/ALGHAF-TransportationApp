@@ -35,8 +35,7 @@ class SearchingRideViewModel extends ReactiveViewModel with ApiViewModel {
     startSearch = true;
     notifyListeners();
     await Future.delayed(Duration(seconds: 10));
-    //NavService.bikeRiderStarted()
-    print("Navigat");
+    NavService.startCarRide();
   }
 
   Directions? info;

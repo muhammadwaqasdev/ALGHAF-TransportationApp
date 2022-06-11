@@ -1,6 +1,5 @@
 import 'package:AlGhaf/generated/assets.asset.dart';
 import 'package:AlGhaf/src/base/utils/utils.dart';
-import 'package:AlGhaf/src/services/local/navigation_service.dart';
 import 'package:AlGhaf/src/shared/app_screen.dart';
 import 'package:AlGhaf/src/shared/main_button.dart';
 import 'package:AlGhaf/src/shared/spacing.dart';
@@ -8,10 +7,8 @@ import 'package:AlGhaf/src/shared/textfield.dart';
 import 'package:AlGhaf/src/styles/app_colors.dart';
 import 'package:AlGhaf/src/styles/text_theme.dart';
 import 'package:AlGhaf/src/views/rider/car_rider/done_car_ride/done_car_ride_view_model.dart';
-import 'package:AlGhaf/src/views/rider/car_rider/start_car_ride/start_car_ride_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:stacked/stacked.dart';
 
 class DoneCarRideView extends StatelessWidget {
@@ -375,6 +372,7 @@ class DoneCarRideView extends StatelessWidget {
                                 model.isRemainPayment = false;
                                 model.isFinished = true;
                                 model.notifyListeners();
+                                model.endRide();
                               }),
                             ],
                           ),
@@ -388,7 +386,11 @@ class DoneCarRideView extends StatelessWidget {
                   width: context.screenSize().width,
                   child: Center(
                     child: Column(
-
+                      children: [
+                        Image.asset(Assets.imagesCheckVector,height: context.screenSize().width / 2, width: context.screenSize().width / 2,),
+                        VerticalSpacing(30),
+                        Text("Trip Finished", style: TextStyling.extraBold.copyWith(color: AppColors.white),),
+                      ],
                     ),
                   ),
                 )

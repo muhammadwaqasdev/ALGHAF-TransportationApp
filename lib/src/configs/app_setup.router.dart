@@ -8,8 +8,17 @@
 
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-import 'package:stacked/stacked_annotations.dart';
 
+import '../views/rider/car_rider/car_rider_home/car_rider_home_view.dart';
+import '../views/rider/car_rider/done_car_ride/done_car_ride_view.dart';
+import '../views/rider/car_rider/searching_ride/searching_ride_view.dart';
+import '../views/rider/car_rider/start_car_ride/start_car_ride_view.dart';
+import '../views/rider/rider_account/rider_account_view.dart';
+import '../views/rider/rider_forgot_password/rider_forgot_password_view.dart';
+import '../views/rider/rider_history/rider_history_view.dart';
+import '../views/rider/rider_signin/rider_signin_view.dart';
+import '../views/rider/rider_splash/rider_splash_view.dart';
+import '../views/rider/rider_wallet/rider_wallet_view.dart';
 import '../views/user/auth/code_verify/code_verify_view.dart';
 import '../views/user/auth/forgot_password/forgot_password_view.dart';
 import '../views/user/auth/number_verify/number_verify_view.dart';
@@ -59,6 +68,16 @@ class Routes {
   static const String hotelSearchingView = '/hotel-searching-view';
   static const String searchedHotelView = '/searched-hotel-view';
   static const String seeHotelView = '/see-hotel-view';
+  static const String riderSplashView = '/rider-splash-view';
+  static const String riderSignInView = '/rider-sign-in-view';
+  static const String riderForgotPasswordView = '/rider-forgot-password-view';
+  static const String carRiderHomeView = '/car-rider-home-view';
+  static const String searchingRideView = '/searching-ride-view';
+  static const String startCarRideView = '/start-car-ride-view';
+  static const String doneCarRideView = '/done-car-ride-view';
+  static const String riderAccountView = '/rider-account-view';
+  static const String riderHistoryView = '/rider-history-view';
+  static const String riderWalletView = '/rider-wallet-view';
   static const all = <String>{
     splashView,
     signInView,
@@ -83,6 +102,16 @@ class Routes {
     hotelSearchingView,
     searchedHotelView,
     seeHotelView,
+    riderSplashView,
+    riderSignInView,
+    riderForgotPasswordView,
+    carRiderHomeView,
+    searchingRideView,
+    startCarRideView,
+    doneCarRideView,
+    riderAccountView,
+    riderHistoryView,
+    riderWalletView,
   };
 }
 
@@ -114,6 +143,17 @@ class StackedRouter extends RouterBase {
     RouteDef(Routes.hotelSearchingView, page: HotelSearchingView),
     RouteDef(Routes.searchedHotelView, page: SearchedHotelView),
     RouteDef(Routes.seeHotelView, page: SeeHotelView),
+    RouteDef(Routes.riderSplashView, page: RiderSplashView),
+    RouteDef(Routes.riderSignInView, page: RiderSignInView),
+    RouteDef(Routes.riderForgotPasswordView, page: RiderForgotPasswordView),
+    RouteDef(Routes.carRiderHomeView, page: CarRiderHomeView),
+    RouteDef(Routes.searchingRideView, page: SearchingRideView),
+    RouteDef(Routes.startCarRideView, page: StartCarRideView),
+    RouteDef(Routes.doneCarRideView, page: DoneCarRideView),
+    RouteDef(Routes.doneCarRideView, page: DoneCarRideView),
+    RouteDef(Routes.riderAccountView, page: RiderAccountView),
+    RouteDef(Routes.riderHistoryView, page: RiderHistoryView),
+    RouteDef(Routes.riderWalletView, page: RiderWalletView),
   ];
   @override
   Map<Type, StackedRouteFactory> get pagesMap => _pagesMap;
@@ -253,6 +293,66 @@ class StackedRouter extends RouterBase {
     SeeHotelView: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => SeeHotelView(),
+        settings: data,
+      );
+    },
+    RiderSplashView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => RiderSplashView(),
+        settings: data,
+      );
+    },
+    RiderSignInView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => RiderSignInView(),
+        settings: data,
+      );
+    },
+    RiderForgotPasswordView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => RiderForgotPasswordView(),
+        settings: data,
+      );
+    },
+    CarRiderHomeView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => CarRiderHomeView(),
+        settings: data,
+      );
+    },
+    SearchingRideView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => SearchingRideView(),
+        settings: data,
+      );
+    },
+    StartCarRideView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => StartCarRideView(),
+        settings: data,
+      );
+    },
+    DoneCarRideView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => DoneCarRideView(),
+        settings: data,
+      );
+    },
+    RiderAccountView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => RiderAccountView(),
+        settings: data,
+      );
+    },
+    RiderHistoryView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => RiderHistoryView(),
+        settings: data,
+      );
+    },
+    RiderWalletView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => RiderWalletView(),
         settings: data,
       );
     },
