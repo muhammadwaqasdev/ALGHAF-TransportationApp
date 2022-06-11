@@ -2,7 +2,6 @@ import 'package:AlGhaf/generated/assets.asset.dart';
 import 'package:AlGhaf/src/base/utils/utils.dart';
 import 'package:AlGhaf/src/shared/app_screen.dart';
 import 'package:AlGhaf/src/views/rider/rider_splash/rider_splash_view_model.dart';
-import 'package:AlGhaf/src/views/user/splash/splash_view_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';

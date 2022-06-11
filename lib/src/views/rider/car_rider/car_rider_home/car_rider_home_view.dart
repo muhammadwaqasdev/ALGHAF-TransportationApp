@@ -1,5 +1,4 @@
 import 'package:AlGhaf/generated/assets.asset.dart';
-import 'package:AlGhaf/src/base/utils/utils.dart';
 import 'package:AlGhaf/src/shared/app_screen.dart';
 import 'package:AlGhaf/src/shared/main_button.dart';
 import 'package:AlGhaf/src/shared/rider/rider_ride_tile.dart';

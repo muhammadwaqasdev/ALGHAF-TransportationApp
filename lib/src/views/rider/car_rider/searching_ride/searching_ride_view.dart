@@ -1,17 +1,11 @@
 import 'package:AlGhaf/generated/assets.asset.dart';
 import 'package:AlGhaf/src/base/utils/utils.dart';
-import 'package:AlGhaf/src/services/local/navigation_service.dart';
 import 'package:AlGhaf/src/shared/app_screen.dart';
-import 'package:AlGhaf/src/shared/carSelectionWidget.dart';
-import 'package:AlGhaf/src/shared/location_input_field.dart';
-import 'package:AlGhaf/src/shared/main_button.dart';
-import 'package:AlGhaf/src/shared/payment_method_card.dart';
 import 'package:AlGhaf/src/shared/rider/mini_toggle_btn.dart';
 import 'package:AlGhaf/src/shared/spacing.dart';
 import 'package:AlGhaf/src/styles/app_colors.dart';
 import 'package:AlGhaf/src/styles/text_theme.dart';
 import 'package:AlGhaf/src/views/rider/car_rider/searching_ride/searching_ride_view_model.dart';
-import 'package:AlGhaf/src/views/user/car_ride/request_texi/request_texi_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';

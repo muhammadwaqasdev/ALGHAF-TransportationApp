@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:AlGhaf/src/models/user_models/directions_model.dart';
-import 'package:AlGhaf/src/services/local/navigation_service.dart';
 import 'package:AlGhaf/src/services/remote/base/api_view_model.dart';
 import 'package:AlGhaf/src/styles/app_colors.dart';
 import 'package:flutter/cupertino.dart';
